@@ -9,7 +9,6 @@ alias gl="git log --graph --abbrev-commit --decorate --format=format:\
 '%C(bold blue)%h%C(reset)'\
 ' - '\
 '%C(white)%s%C(reset)'\
-' - '\
  --all"
 # '%C(bold cyan)%ar %C(reset)'\
 # '%C(bold yellow)%d%C(reset)'\
