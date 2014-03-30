@@ -17,6 +17,7 @@ alias gl="git log --graph --abbrev-commit --decorate --format=format:\
 # '%C(bold cyan)%ar %C(reset)'\
 # '%C(bold yellow)%d%C(reset)'\
 # '%C(dim white)- %an%C(reset)'\
+# @Slipp D. Thompson : [Pretty git branch graphs - Stack Overflow](http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs)
 
 alias gll="git log --no-pager --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
