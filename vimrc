@@ -1,11 +1,19 @@
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
 
-" VIM STYLING
-set t_Co=256              " enable 256-color mode.
-set number                " show line numbers
+" VIM SETTINGS
+set t_Co=256              " 256-color
+set number                " line numbers
 set laststatus=2          " white status bar
 set ruler                 " Always show info along bottom.
 set background=dark
+set scrolloff=5           " Never scoll down too low
+set history=1000        " Allow undo, remember last command with up
+
+
+" BEGINNERS HELPERS
+set backspace=indent,eol,start  " Allow backspace in all circumstance
+set showcmd             " Update status line when selecting text
+" set mouse=a             " Allow selection with the mouse in all mode
 
 " CODE STYLING
 colorscheme elflord
@@ -25,7 +33,3 @@ set nowrap                " don't wrap text
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
-
-
-
-
