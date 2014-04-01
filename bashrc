@@ -122,4 +122,3 @@ echo "."
 clear                                 # clear shell on log
 
 source ~/.fzf.bash
-echo "."  
