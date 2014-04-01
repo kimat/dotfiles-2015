@@ -117,7 +117,9 @@ export PS1='▌'                    # shorten prompt
 echo "."  
 cd /vagrant                           # set base dir
 echo "."  
-# clear                                 # clear shell on log
+
+# TODO : only clear if no important updates 
+clear                                 # clear shell on log
 
 source ~/.fzf.bash
 echo "."  
