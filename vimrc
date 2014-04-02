@@ -1,4 +1,4 @@
-SET NOCOMPATible          " get rid of Vi compatibility mode. SET FIRST!
+set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
 
 " VIM SETTINGS
 set t_Co=256              " 256-color
@@ -8,6 +8,7 @@ set ruler                 " Always show info along bottom.
 set background=dark
 set scrolloff=5           " Never scoll down too low
 set history=1000        " Allow undo, remember last command with up
+
 
 
 " BEGINNERS HELPERS
@@ -38,3 +39,22 @@ set ignorecase            " Make searches case-insensitive.
 " UNBIND CONFLICTING KEYS WITH TMUX
 :nmap <M-f> <nop>
 :nmap <M-s> <nop>
+:nmap <M-d> <nop>
+:nmap <M-e> <nop>
+
+
+" TABS MANAGEMENT
+" [Working with tabs](http://vimcasts.org/episodes/working-with-tabs/)
+:nmap <c-t> :tabedit
+noremap <c-s> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+:nnoremap <silent> <c-f> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+
+" Reload vimrc
+:nmap <c-m-r> :so ~/.vimrc <CR>
+:nmap <c-s-r> :so ~/.vimrc <CR>
+
+" TODO Better escape key 
+
+
+
