@@ -1,4 +1,4 @@
-set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
+SET NOCOMPATible          " get rid of Vi compatibility mode. SET FIRST!
 
 " VIM SETTINGS
 set t_Co=256              " 256-color
@@ -33,3 +33,8 @@ set nowrap                " don't wrap text
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
+
+
+" UNBIND CONFLICTING KEYS WITH TMUX
+:nmap <M-f> <nop>
+:nmap <M-s> <nop>
