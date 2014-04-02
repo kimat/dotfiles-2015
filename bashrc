@@ -115,8 +115,15 @@ export PROMPT_COMMAND='history -a; printf "\033]0;%s\033\\" "vag ${PWD/#$HOME/~}
 echo "."  
 export PS1='▌'                    # shorten prompt
 echo "."  
-cd /vagrant                           # set base dir
+# cd /vagrant                           # set base dir
+cd /root/dotfiles                           # set base dir
 echo "."  
+
+# Fix : turn off Ctrl + s XOFF (XON is Ctrl + q)
+stty ixany
+stty ixoff -ixon
+stty stop undef
+stty start undef
 
 # TODO : only clear if no important updates 
 clear                                 # clear shell on log
