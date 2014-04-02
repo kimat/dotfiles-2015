@@ -45,7 +45,7 @@ set ignorecase            " Make searches case-insensitive.
 
 " TABS MANAGEMENT
 " [Working with tabs](http://vimcasts.org/episodes/working-with-tabs/)
-:nmap <c-t> :tabedit
+:nmap <c-t> :tabedit 
 noremap <c-s> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 :nnoremap <silent> <c-f> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
