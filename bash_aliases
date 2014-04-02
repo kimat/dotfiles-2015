@@ -8,17 +8,18 @@ alias tmux="tmux -u attach || tmux -u"
 
 # GIT ALIASES
 alias g="git"
-alias gd="git diff"
-alias gdd="git diff --cached"
+alias gd="git --no-pager diff"
+alias gdd="git --no-pager diff --cached"
 alias ga="git add "
 alias gs="git status"
 alias gc="git commit -m "
 alias gp="git push"
-alias gl="git log --graph --abbrev-commit --decorate --format=format:\
+alias gl="git --no-pager log --graph --abbrev-commit --decorate --format=format:\
 '%C(bold blue)%h%C(reset)'\
 ' - '\
 '%C(white)%s%C(reset)'\
- --all"
+ --all\
+ | head -n 10"
 # '%C(bold cyan)%ar %C(reset)'\
 # '%C(bold yellow)%d%C(reset)'\
 # '%C(dim white)- %an%C(reset)'\
