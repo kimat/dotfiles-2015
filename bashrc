@@ -109,11 +109,9 @@ HISTSIZE=100000                       # history size
 echo "."  
 HISTFILESIZE=2000                     # history size
 echo "."  
-#-_-# export PROMPT_COMMAND='history -a;'   # get history synced across shells
-#-_-# export PROMPT_COMMAND='history -a; printf "\033]0;%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"' 		 	    # sync history && control window title
-export PROMPT_COMMAND='history -a; printf "\033]0;%s\033\\" "vag ${PWD/#$HOME/~}"' 		 	    # sync history && control window title
+export PROMPT_COMMAND='history -a;' 
 echo "."  
-export PS1='▌'                    # shorten prompt
+export PS1='\[\033]0;$(pwd|sed "s/\/root/~/")\033\\▌\]'  # command prompt
 echo "."  
 # cd /vagrant                           # set base dir
 cd /root/dotfiles                           # set base dir
