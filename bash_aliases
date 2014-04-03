@@ -11,7 +11,7 @@ alias g="git"
 alias gd="git --no-pager diff"
 alias gdd="git --no-pager diff --cached"
 alias ga="git add "
-alias gs="git status"
+alias gs="watch -n 1 --color git status"
 alias gc="git commit -m "
 alias gp="git push"
 alias gl="git --no-pager log --graph --abbrev-commit --decorate --format=format:\
@@ -28,6 +28,7 @@ alias gl="git --no-pager log --graph --abbrev-commit --decorate --format=format:
 alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 
+# FZZ ?
 fh() {
   eval $(history)
 }
