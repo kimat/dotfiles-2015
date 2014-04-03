@@ -6,6 +6,8 @@ ln -s ~/dotfiles/dircolors ~/.dircolors
 ln -s ~/dotfiles/bashrc ~/.bashrc
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/gitignore ~/.gitignore
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+
 
 
 ln -s ~/dotfiles/config/htop -t /root/.config
