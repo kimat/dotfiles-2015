@@ -10,4 +10,5 @@ ln -s ~/dotfiles/gitconfig ~/.gitconfig
 
 
 
+ln -s ~/dotfiles/vim -T /root/.vim
 ln -s ~/dotfiles/config/htop -t /root/.config
