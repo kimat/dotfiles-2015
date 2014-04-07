@@ -8,10 +8,10 @@ alias t="tmux -u attach || tmux -u"
 
 # GIT ALIASES
 alias g="git"
-alias gd="git --no-pager diff"
-alias gdd="git --no-pager diff --cached"
+alias gdd="git --no-pager diff"
+alias gd="git --no-pager diff --cached"
 alias ga="git add "
-alias gs="watch -n 1 --color git status"
+alias gs="watch -n 1 --color git status --short"
 alias gc="git commit -m "
 alias gp="git push"
 alias gl="git --no-pager log --graph --abbrev-commit --decorate --format=format:\
