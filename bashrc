@@ -117,7 +117,7 @@ echo "."
 cd /root/dotfiles                           # set base dir
 echo "."  
 
-# Fix : turn off Ctrl + s XOFF (XON is Ctrl + q)
+# Fix : turn off Ctrl + S :  XOFF (XON is Ctrl + q)
 stty ixany
 stty ixoff -ixon
 stty stop undef
