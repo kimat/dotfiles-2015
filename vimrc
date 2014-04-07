@@ -1,6 +1,6 @@
-ret nocompatible          " get rid of Vi compatibility mode. SET FIRST!
+set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
 filetype off
-set clipboard=unnamed 
+set clipboard=unnamed
 
 " =========  VUNDLE  =========
 set rtp+=~/.vim/bundle/vundle/
