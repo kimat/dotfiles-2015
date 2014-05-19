@@ -11,7 +11,7 @@ alias v="vim -S ~/.vim/sessions/main.vim"
 alias vv='vim -c ":next ~/.vimrc ~/.vim/vundles.vim ~/.vim/perso.vim /vagrant/writing-using/vim.md | :tab :sball | :tabfirst"'
 alias vt='vim -c ":next ~/.tmux.conf /vagrant/writing-using/tmux.md | :tab :sball | :tabfirst"'
 alias vb='vim -c ":next ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md | :tab :sball | :tabfirst "'
-alias ve='(cd /vagrant/ecam ; vim -c ":next active.md done.md projects.md ecam.md todo.md | :tab :sball | :tabfirst")'
+alias ve='(cd /vagrant/ecam ; vim -c ":next active.md done.md projects.md ecam.md | :tab :sball | :tabfirst")'
 
 # GIT ALIASES
 alias g="git"
