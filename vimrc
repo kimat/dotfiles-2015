@@ -1,13 +1,8 @@
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!  filetype off
 set clipboard=unnamed
 
-" =========  VUNDLE  =========
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-source ~/.vim/vundles.vim
-" filetype plugin indent on
-" filetype indent on
-" au BufNewFile,BufRead .*.md  setf markdown
+" =========  NEOBUNDLE  =========
+source ~/.vim/neobundles.vim
 
 " ========= FZF =========
 set rtp+=~/.fzf
@@ -48,7 +43,6 @@ set backspace=indent,eol,start  " Allow backspace in all circumstance
 
 " =========  FILE TYPE  =========
 syntax on
-filetype plugin indent on
 " -- utf 8 --
 set encoding=utf-8
 set fileencodings=utf-8
