@@ -4,14 +4,21 @@
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal ls
 
 # TMUX
-alias t="tmux -u attach || tmux -u"
+alias t="tmux -u attach || tmuxifier s main"
 
 # VIM
 alias v="vim -S ~/.vim/sessions/main.vim"
-alias vv='vim -c ":next ~/.vimrc ~/.vim/vundles.vim ~/.vim/perso.vim /vagrant/writing-using/vim.md | :tab :sball | :tabfirst"'
-alias vt='vim -c ":next ~/.tmux.conf /vagrant/writing-using/tmux.md | :tab :sball | :tabfirst"'
+alias vv='vim -c ":next ~/.vimrc ~/.vim/neobundles.vim ~/.vim/perso.vim /vagrant/writing-using/vim.md | :tab :sball | :tabfirst"'
+alias vt='vim -c ":next ~/.tmux.conf /vagrant/writing-using/tmux.md ~/.tmuxifier/layouts/main.session.sh | :tab :sball | :tabfirst"'
+alias vbt='vim -c ":next ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md \
+  ~/.tmux.conf /vagrant/writing-using/tmux.md ~/.tmuxifier/layouts/main.session.sh | :tab :sball | :tabfirst"'
 alias vb='vim -c ":next ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md | :tab :sball | :tabfirst "'
-alias ve='(cd /vagrant/ecam ; vim -c ":next active.md done.md projects.md ecam.md | :tab :sball | :tabfirst")'
+alias ve='(cd /vagrant/ecam ; vim -c ":next done.md projects.md ecam.md | :tab :sball | :tabfirst")'
+
+# RUBY ALIASES
+alias bu='bundle update'
+alias bi='bundle install'
+alias bui='bundle update ;  bundle install'
 
 # GIT ALIASES
 alias g="git"
