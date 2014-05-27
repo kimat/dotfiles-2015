@@ -5,7 +5,8 @@
 :cabbrev h tab help
 
 " -- Allows Open vim with multiple tabs --
-tab all                   
+" -- vim file1 file2 -> bothe files opened in their respective tabs --
+" tab all                   
 
 " -- new tab --
 nmap <c-t> :tabedit 
@@ -33,7 +34,8 @@ nnoremap <C-Right> :echo 'Current time is ' . strftime('%c')<CR>
 noremap <c-w> <Esc>:x<CR>
 
 " -- Always show tab bar --
-set showtabline=2          
+" set showtabline=2          
+
 
 "  Selected tab
 hi TabLineSel ctermfg=magenta cterm=none 
