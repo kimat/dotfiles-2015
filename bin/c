@@ -1,0 +1,64 @@
+#!/bin/bash
+usage()
+{
+  echo "$(c usage1: a y) $(c "$0 text [text_color] [bg_color]" ly)"
+  echo "$(c usage2: a g) $(c "cat file_pipe | $0 [text_color] [bg_color]" lg)" 
+
+  echo -n "$(c "colors :" a c) "
+  for i in "${!_colors[@]}"; do
+    [[ $i == "a" || $i == "black" ]] && (coloring "$i" $i w ; echo -n " ") || coloring "$i " $i
+  done ; echo ""
+
+  echo -n "$(c "(l)ightcolors:"  a r) "
+  for i in "${!_colors[@]}"; do
+    [[ $i == "a" || $i == "black" ]] && (coloring "l$i" l$i w ; echo -n " ") || coloring "l$i " l$i
+  done ; echo ""
+
+  echo "$(c "e.g :" a m) $(c "$0 \"coloring this with\" black white" m)"
+  echo "$(c "coloring this with" black white)"
+}
+
+declare -A _colors
+_colors=( 
+  ["black"]="0"
+  ["red"]="1"
+  ["green"]="2"
+  ["yellow"]="3"
+  ["blue"]="4"
+  ["magenta"]="5"
+  ["cyan"]="6"
+  ["white"]="7"
+  ["a"]="0"
+  ["r"]="1"
+  ["g"]="2"
+  ["y"]="3"
+  ["b"]="4"
+  ["m"]="5"
+  ["c"]="6"
+  ["w"]="7"
+)
+function check_light()
+{ 
+  col="$1"
+  if [[ $col == l* ]] ; then tput bold ; col="${col:1}" ; fi
+}
+function coloring()  # text fgcol bgcol
+{
+  check_light "$2" ; tput setaf "${_colors["$col"]}"
+  [[ -z "$3" ]] || ( check_light "$3" ; tput setab "${_colors["$col"]}")
+  echo -n "$1"
+  tput sgr 0  # reset everything
+}
+function c(){
+  coloring "$1" "$2" "$3"
+}
+
+
+if [[ -p /dev/fd/0 && $# > 0 ]]; then
+  while read pipedline ; do coloring $pipedline $1 $2 ; done
+elif [[ $# >  1 ]]; then
+  coloring "$1" "$2" "$3"
+else
+  usage 
+  exit 0
+fi
