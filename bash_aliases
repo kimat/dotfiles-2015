@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 # UBUNTU
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal ls
@@ -7,13 +7,19 @@ alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*
 alias t="tmux -u attach || tmuxifier s main"
 
 # VIM
-alias v="vim -S ~/.vim/sessions/main.vim"
-alias vv='vim -c ":next ~/.vimrc ~/.vim/neobundles.vim ~/.vim/perso.vim /vagrant/writing-using/vim.md | :tab :sball | :tabfirst"'
-alias vt='vim -c ":next ~/.tmux.conf /vagrant/writing-using/tmux.md ~/.tmuxifier/layouts/main.session.sh | :tab :sball | :tabfirst"'
-alias vbt='vim -c ":next ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md \
-  ~/.tmux.conf /vagrant/writing-using/tmux.md ~/.tmuxifier/layouts/main.session.sh | :tab :sball | :tabfirst"'
-alias vb='vim -c ":next ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md | :tab :sball | :tabfirst "'
-alias ve='(cd /vagrant/ecam ; vim -c ":next done.md projects.md ecam.md | :tab :sball | :tabfirst")'
+
+v() {
+  cd $1 ;
+  vim -c ":CtrlSpaceLoadWorkspace $2"
+}
+
+alias vd='v ~/dotfiles dotfiles'
+alias vm='v /vagrant md'
+alias vt='vim ~/.tmux.conf /vagrant/writing-using/tmux.md ~/.tmuxifier/layouts/main.session.sh'
+alias vbt='vim ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md \
+  ~/.tmux.conf /vagrant/writing-using/tmux.md ~/.tmuxifier/layouts/main.session.sh'
+alias vb='vim ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md'
+alias ve='(cd /vagrant/ecam ; vim done.md projects.md ecam.md'
 
 # RUBY ALIASES
 alias bu='bundle update'
