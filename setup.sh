@@ -9,6 +9,7 @@ ln -s ~/dotfiles/fzf ~/.fzf
 
 # make symlinks to these dotfiles
 ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/tmuxifier ~/.tmuxifier
 ln -s ~/dotfiles/tmuxifier/bin/tmuxifier ~/dotfiles/bin/tmuxifier
 ln -s ~/dotfiles/bash_aliases ~/.bash_aliases
