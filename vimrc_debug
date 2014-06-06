@@ -1,0 +1,7 @@
+set nocompatible          " get rid of Vi compatibility mode. SET FIRST!  filetype off
+set clipboard=unnamed
+colorscheme elflord
+set showtabline=2
+hi TabLine     ctermfg=White   ctermbg=NONE cterm=NONE
+hi TabLineFill ctermfg=yellow  ctermbg=NONE cterm=NONE
+hi TabLineSel  ctermfg=magenta ctermbg=NONE cterm=NONE
