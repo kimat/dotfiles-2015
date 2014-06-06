@@ -6,10 +6,10 @@
 
 " -- Allows Open vim with multiple tabs --
 " -- vim file1 file2 -> bothe files opened in their respective tabs --
-" tab all                   
+tab all
 
 " -- new tab --
-nmap <c-t> :tabedit 
+nmap <c-t> :tabedit
 
 " -- switch tabs --
 nnoremap <C-Left> gt
@@ -21,10 +21,10 @@ nnoremap <C-Right> :echo 'Current time is ' . strftime('%c')<CR>
 " tab navigation like firefox
 " nnoremap <C-S-tab> :tabprevious<CR>
 " nnoremap <C-tab>   :tabnext<CR>
-" nnoremap <C-t>     :tabedit 
+" nnoremap <C-t>     :tabedit
 " inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 " inoremap <C-tab>   <Esc>:tabnext<CR>i
-" inoremap <C-t>     <Esc>:tabedit 
+" inoremap <C-t>     <Esc>:tabedit
 
 " -- move tabs --
 "  noremap <c-s-left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -34,22 +34,5 @@ nnoremap <C-Right> :echo 'Current time is ' . strftime('%c')<CR>
 noremap <c-w> <Esc>:x<CR>
 
 " -- Always show tab bar --
-" set showtabline=2          
-
-
-"  Selected tab
-hi TabLineSel ctermfg=magenta cterm=none 
-
-
-
-" -- style the tab bar --
-" hi TabLineFill ctermfg=black ctermfg=black
-" hi TabLineFill cterm=none ctermfg=235 ctermfg=235
-" hi TabLine cterm=none ctermbg=black ctermfg=black
-" Selected tab
-" hi TabLineSel ctermbg=235 ctermfg=magenta cterm=none 
-" hi TabLineSel ctermbg=235 ctermfg=magenta cterm=none 
-" underline 
-" hi TabLine cterm=none ctermbg=black ctermfg=darkgray
-" hi TabLineSel ctermbg=black ctermfg=magenta cterm=none " underline 
+set showtabline=2   "0=no 1=if_tabs 2=always
 

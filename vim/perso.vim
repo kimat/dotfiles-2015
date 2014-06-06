@@ -1,30 +1,54 @@
 set nopaste
 
+" = HOW TO =
+" :h CTRL-K
+" :map <CTRL-P>
+" set showcmd
+
+let mapleader =  "²"
+map <Leader>f :execute GoBuffer("next")<CR>
+map <Leader>s :execute GoBuffer("pre")<CR>
+vnoremap a :Tabu /\|<CR>
+
 "  ========= ESC to switch modes LMFAO =========
 "  -- insert mode
 noremap ù  <insert>
 imap    ù  <Esc>
 
-"  ========= HJKL wtf ? IJKL is in my palm already sorry =========
+"  ========= HJKL =========
+" Refs :
+" - [Use ijkl to move the cursor and h to insert - Vim Tips Wiki](http://vim.wikia.com/wiki/Use_ijkl_to_move_the_cursor_and_h_to_insert)
+" - [Here is why vim uses the hjkl keys as arrow keys - good coders code, great reuse](http://www.catonmat.net/blog/why-vim-uses-hjkl-as-arrow-keys/)
+" h : <-
+" j : down
+" k : up
+" l : ->
 
-"  -- ijkl
-" [ijkl Vim Tip s ](http://vim.wikia.com/wiki/U s e_ijkl_to_move_the_cur s or_and_h_to_in s ert)
+" allow shifting of home row one char to the right (pinky left)
+noremap m h
 
-map                    i gk
-map                    j <Left>
-map                    k gj
-" noremap  o     i
+"  ========= INSERT-NORMAL MODE =========
+noremap <tab> <Esc>
+inoremap ii <Esc>
 noremap  <C-i> i
 inoremap <C-i> <Esc>
 
-"  -- end & home
-" m was 'nothing'
-" h was 'left'
-noremap m $
-noremap h ^
+"  ========= HOME-END =========
+" m was 'set mark'
+noremap M $
+noremap H 0
+noremap <C-m> G
+noremap <C-h> gg
+
+noremap } }jzz
+noremap { {(zz
 
 " -- doc end & home
 " M was 'focus line @ screen middle'
 " H was 'go to first line on current scroll'
-noremap M G
-noremap H gg
+" noremap M G
+
+"  ========= INDENTATION =========
+" Reverse default indenting keys -> shift+key to unindent
+noremap < >
+noremap > <

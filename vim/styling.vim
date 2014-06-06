@@ -1,10 +1,12 @@
-" -- CODE STYLING --
+" -- Indentation --
 set tabstop=2             " tab spacing
 set softtabstop=2         " unify
 set shiftwidth=2          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
 set expandtab             " use spaces instead of tabs
 set autoindent            " auto-indent
+
+" -- Wrapping --
 set nowrap                " don't wrap text
 
 " -- Colors --
@@ -13,7 +15,7 @@ syntax enable
 " colorscheme elflord
 " colorscheme desert
 colorscheme Tomorrow-Night-Eighties
-" colorscheme railscasts 
+" colorscheme railscasts
 set background=dark
 
 " -- bottom bar --
@@ -25,5 +27,22 @@ hi LineNr ctermfg=darkgray ctermbg=none
 
 " -- cursor line --
 set cursorline
-" hi CursorLine ctermbg=235 ctermfg=none cterm=none 
-" cterm=underline 
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+
+" -- tab line (top) --
+" hi TabLine     ctermfg=238   ctermbg=NONE cterm=NONE
+hi TabLine     ctermfg=242   ctermbg=NONE cterm=NONE
+hi TabLineFill ctermfg=yellow  ctermbg=NONE cterm=NONE
+hi TabLineSel  ctermfg=135 ctermbg=NONE cterm=NONE
+" hi TabLineSel  ctermfg=magenta ctermbg=NONE cterm=NONE
+
+" hi CursorLine ctermbg=235 ctermfg=none cterm=none
+" cterm=underline
