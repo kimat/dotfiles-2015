@@ -19,3 +19,6 @@ ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/config/htop -t /root/.config
 
+# If no such dir : ~/.vim/bundle
+mkdir -p ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
