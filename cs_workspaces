@@ -1,0 +1,11 @@
+CS_LAST_WORKSPACE: dotfiles
+CS_WORKSPACE_BEGIN: vim
+CS_WORKSPACE_END: vim
+CS_WORKSPACE_BEGIN: launcher
+1,,1,projects/launcher/Gemfile|projects/launcher/views/index.slim|projects/launcher/views/layout.slim|projects/launcher/config.ru|projects/launcher/public/stylesheets/sass/styles.sass|projects/launcher/sin.rb,4
+CS_WORKSPACE_END: launcher
+CS_WORKSPACE_BEGIN: dotfiles
+1,Vim,0,vimrc_debug|/root/.vimrc|vim/neobundles.vim|vim/perso.vim|vim/tabs.vim|.git/cs_workspaces|vim/styling.vim|vim/test.vim,2
+2,Tmux,0,tmuxifier/layouts/main.session.sh|/root/.tmux.conf,1
+3,Bash,1,/root/.bash_aliases|/root/.bashrc,0
+CS_WORKSPACE_END: dotfiles
