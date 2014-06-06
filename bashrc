@@ -98,24 +98,13 @@ fi
 #    . /etc/bash_completion
 #fi
 
-echo "."  
+# Override defaults
 EDITOR=/usr/bin/vim
-echo "."  
 HISTCONTROL=ignoredups:ignorespace    # ignore dups and cmds with leading space
-echo "."  
 HISTIGNORE=ls:cd:exit:ll:la:history   # ignore these commands
-echo "."  
 HISTSIZE=100000                       # history size
-echo "."  
 HISTFILESIZE=2000                     # history size
-echo "."  
-export PROMPT_COMMAND='history -a;' 
-echo "."  
-export PS1='\[\033]0;$(pwd|sed "s/\/root/~/")\033\\▌\]'  # command prompt
-echo "."  
-# cd /vagrant                           # set base dir
-cd /root/dotfiles                           # set base dir
-echo "."  
+export PROMPT_COMMAND='history -a;'
 
 # Fix : turn off Ctrl + S :  XOFF (XON is Ctrl + q)
 stty ixany
@@ -123,7 +112,21 @@ stty ixoff -ixon
 stty stop undef
 stty start undef
 
-# TODO : only clear if no important updates 
-clear                                 # clear shell on log
+# Enable 256 colors
+export TERM=xterm-256color
 
+# FZF utility
 source ~/.fzf.bash
+
+# Colorize Prompt : cmd in color simply
+export PS1="\[$(tput setaf 208)\]"
+trap 'tput sgr0' DEBUG
+
+# Colorize Prompt : space carret only
+# export PS1="\[$(tput bold; tput setab 208)\] \[$(tput sgr0)\]"
+
+# Prompt as : special pipe symbol
+# export PS1="▌"
+
+# Prompt pwd in window title for Putty
+#export PS1='\[\033]0;$(pwd|sed "s/\/root/~/")\033\\▌\]'
