@@ -42,6 +42,11 @@ NeoBundle 'vim-scripts/YankRing.vim'
 NeoBundle 'flazz/vim-colorschemes'
 " [color themes pack](https://github.com/flazz/vim-colorschemes)
 
+NeoBundle 'tpope/vim-rails'
+" [for rails : syntax, helpers](https://github.com/tpope/vim-rails)
+
+NeoBundle 'kchmck/vim-coffee-script'
+
 NeoBundle 'slim-template/vim-slim'
 " [slim syntax](
 " https://github.com/slim-template/vim-slim
@@ -52,7 +57,9 @@ NeoBundle 'plasticboy/vim-markdown'
 " [Enabling markdown highlighting in Vim - StackOverflow](http://stackoverflow.com/questions/10964681/enabling-markdown-highlighting-in-vim)
 let g:vim_markdown_folding_disabled=1
 " let g:vim_markdown_initial_foldlevel=1
-let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh', 'vim']
+
+" :ls /usr/share/vim/vim74/syntax
+let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh', 'vim', 'yaml', 'yml=yaml', 'slim' , 'sass']
 
 NeoBundle 'bronson/vim-trailing-whitespace'
 
