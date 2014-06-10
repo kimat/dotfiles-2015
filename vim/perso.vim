@@ -6,8 +6,8 @@ set nopaste
 " set showcmd
 
 let mapleader =  "²"
-map <Leader>f :execute GoBuffer("next")<CR>
-map <Leader>s :execute GoBuffer("pre")<CR>
+map <Leader>f :CtrlSpaceGoNext<CR>
+map <Leader>s :CtrlSpaceGoPrevious<CR>
 vnoremap a :Tabu /\|<CR>
 
 "  ========= ESC to switch modes LMFAO =========
