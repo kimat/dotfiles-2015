@@ -1,3 +1,5 @@
+" usage : vim -u ~/dotfiles/vimrc_debug
+"
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!  filetype off
 set clipboard=unnamed
 colorscheme elflord
@@ -5,3 +7,15 @@ set showtabline=2
 hi TabLine     ctermfg=White   ctermbg=NONE cterm=NONE
 hi TabLineFill ctermfg=yellow  ctermbg=NONE cterm=NONE
 hi TabLineSel  ctermfg=magenta ctermbg=NONE cterm=NONE
+
+" =========  NEOBUNDLE  =========
+
+filetype plugin indent on
+set hidden
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'szw/vim-ctrlspace'
