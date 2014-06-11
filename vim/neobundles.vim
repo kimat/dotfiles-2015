@@ -93,7 +93,7 @@ if exists("+showtabline")
     if selected == -1
       let selected = first
     endif
-    execute ":buffer ". selected
+    silent! exe ":b " . selected
   endfunction
 
   function Smallify_Number(nb)
