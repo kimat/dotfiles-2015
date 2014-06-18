@@ -6,15 +6,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 "───────────────────────────────────────────────────
 
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'Shougo/vimshell.vim'
+" NeoBundle 'Shougo/vimproc', {
+"       \ 'build' : {
+"       \     'windows' : 'make -f make_mingw32.mak',
+"       \     'cygwin' : 'make -f make_cygwin.mak',
+"       \     'mac' : 'make -f make_mac.mak',
+"       \     'unix' : 'make -f make_unix.mak',
+"       \    },
+"       \ }
+" NeoBundle 'Shougo/vimshell.vim'
 "───────────────────────────────────────────────────
 
 NeoBundle 'tpope/vim-commentary'
@@ -27,6 +27,10 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-surround'
 " [surrounding or changing surrounding](https://github.com/tpope/vim-surround)
 "───────────────────────────────────────────────────
+
+
+NeoBundle 'danro/rename.vim'
+" [danro/rename.vim · GitHub](https://github.com/danro/rename.vim)
 
 NeoBundle 'kien/ctrlp.vim'
 "Keep caches between sessions - f5 to refresh
