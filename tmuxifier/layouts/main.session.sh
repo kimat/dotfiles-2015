@@ -1,6 +1,6 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
-session_root "/root/"
+# session_root "/root/"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
@@ -11,43 +11,34 @@ if initialize_session "main"; then
   run_cmd "clear"
   run_cmd "vm"
 
-  new_window "dotfiles"
   #---------------
-  run_cmd "cd /root/dotfiles/"
-  run_cmd "clear"
-  run_cmd "vd"
+  window_root "/root/dotfiles/"
+  new_window "dotfiles"
+  run_cmd 'vim -c ":CtrlSpaceLoadWorkspace"'
   split_h 40
   select_pane 1
-  run_cmd "cd /root/dotfiles/"
-  run_cmd "clear"
   split_v 30
   select_pane 2
-  run_cmd "cd /root/dotfiles/"
-  run_cmd "clear"
   run_cmd "gs"
   select_pane 0
 
-  new_window "launcher"
   #---------------
-  run_cmd "cd /root/launcher/"
-  run_cmd "clear"
+  window_root "/vagrant/projects/issues/"
+  new_window "issues"
+  run_cmd 'vim -c ":CtrlSpaceLoadWorkspace"'
   split_h
   select_pane 1
-  run_cmd "cd /root/launcher/"
   run_cmd "clear"
   split_v 30
   select_pane 2
-  run_cmd "cd /root/launcher/"
   run_cmd "clear"
 
-  new_window "view"
-
-  #load_window "example"
-
-  # Select the default active window on session creation.
-  #select_window 1
-
+  #---------------
+  window_root "/vagrant/projects/issues/"
+  new_window "issues-git"
+  split_h
+  select_pane 1
+  run_cmd "gs"
 fi
 
-# Finalize session creation and switch/attach to it.
 finalize_and_go_to_session
