@@ -24,6 +24,7 @@ alias ve='(cd /vagrant/ecam ; vim done.md projects.md ecam.md'
 alias bu='bundle update'
 alias bi='bundle install'
 alias bui='bundle update ;  bundle install'
+alias buip='bundle update --without development;  bundle install --without development'
 
 # GIT ALIASES
 alias g="git"
