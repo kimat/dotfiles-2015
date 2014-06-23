@@ -3,9 +3,9 @@
 
 # make symlinks to these folders
 ln -s ~/dotfiles/vim -T ~/.vim
-ln -s ~/dotfiles/bin /usr/local/bin
 ln -s ~/dotfiles/bak ~/.bak
 ln -s ~/dotfiles/fzf ~/.fzf
+ln -s ~/dotfiles/bin ~/bin
 
 # make symlinks to these dotfiles
 ln -s ~/dotfiles/vimrc ~/.vimrc
