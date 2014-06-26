@@ -6,6 +6,7 @@ ln -s ~/dotfiles/fzf ~/.fzf
 ln -s ~/dotfiles/bin ~/bin
 
 # make symlinks to these dotfiles
+ln -s ~/dotfiles/bash_profile ~/.bash_profile
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/fzf.bash ~/.fzf.bash
 ln -s ~/dotfiles/vimrc ~/.vimrc
