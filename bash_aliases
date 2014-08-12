@@ -1,15 +1,16 @@
+# BOWER
+alias bower="bower --allow-root"
 # UBUNTU
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal ls
 
 # TMUX
-alias t="tmux -u attach || tmuxifier s main"
+alias t="tmux -u attach || ~/dotfiles/bin/tmuxifier s main"
 
 # VIM
 alias rmswp='find -name "*.swp" -delete'
 
 v() {
-  cd $1 ;
-  vim -c ":CtrlSpaceLoadWorkspace $2"
+  vim -c ":CtrlSpaceLoadWorkspace $1"
 }
 
 alias vd='v ~/dotfiles dotfiles'
@@ -27,6 +28,8 @@ alias bui='bundle update ;  bundle install'
 alias buip='bundle update ;  bundle install --without development'
 
 # GIT ALIASES
+# git config user.email k.boven@ecam.be
+# git config user.name BOVEN Kimat
 alias g="git"
 alias gdd="git --no-pager diff"
 alias gd="git --no-pager diff --cached"
