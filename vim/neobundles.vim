@@ -17,6 +17,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " NeoBundle 'Shougo/vimshell.vim'
 "───────────────────────────────────────────────────
 
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'tek/vim-textobj-ruby'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'godlygeek/tabular'
@@ -28,6 +31,21 @@ NeoBundle 'tpope/vim-surround'
 " [surrounding or changing surrounding](https://github.com/tpope/vim-surround)
 "───────────────────────────────────────────────────
 
+NeoBundle 'majutsushi/tagbar'
+" [majutsushi/tagbar · GitHub](https://github.com/majutsushi/tagbar)
+
+NeoBundle 'scrooloose/syntastic'
+" [scrooloose/syntastic · GitHub](https://github.com/scrooloose/syntastic)
+" List syntax errors in file on :w
+
+NeoBundle 'Valloric/YouCompleteMe', {
+  \ 'build' : {
+  \     'mac' : './install.sh',
+  \     'unix' : './install.sh',
+  \    },
+\ }
+" [Valloric/YouCompleteMe · GitHub](https://github.com/Valloric/YouCompleteMe)
+" Autocompletes : methods, filenames, directories, etc
 
 NeoBundle 'danro/rename.vim'
 " [danro/rename.vim · GitHub](https://github.com/danro/rename.vim)

@@ -5,15 +5,26 @@ set nopaste
 " :map <CTRL-P>
 " set showcmd
 
-let mapleader =  "²"
+let mapleader = "\<tab>"
+map <Leader>p :CtrlP<CR>
 map <Leader>f :call GoBuffer("next")<CR>
 map <Leader>s :call GoBuffer("previous")<CR>
+map <Leader>t :TagbarToggle<CR>
+map <Leader>p :set paste<CR>
+map <Leader>S :CtrlSpaceSaveWorkspace<CR>
+
 vnoremap a :Tabu /\|<CR>
+noremap <Leader>n :set relativenumber!
+
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
 
 "  ========= ESC to switch modes LMFAO =========
 "  -- insert mode
-noremap ù  <insert>
-imap    ù  <Esc>
+" noremap ù  <insert>
+" imap    ù  <Esc>
 
 "  ========= HJKL =========
 " Refs :
@@ -29,13 +40,13 @@ noremap m h
 
 "  ========= INSERT-NORMAL MODE =========
 noremap <tab> <Esc>
-inoremap ii <Esc>
 noremap  <C-i> i
 inoremap <C-i> <Esc>
 
 "  ========= HOME-END =========
 " m was 'set mark'
 noremap M $
+noremap L $
 noremap H 0
 noremap <C-m> G
 noremap <C-h> gg
