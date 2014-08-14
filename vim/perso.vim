@@ -10,16 +10,17 @@ map <Leader>p :CtrlP<CR>
 map <Leader>f :call GoBuffer("next")<CR>
 map <Leader>s :call GoBuffer("previous")<CR>
 map <Leader>t :TagbarToggle<CR>
-map <Leader>p :set paste<CR>
+map <Leader>P :set paste<CR>
 map <Leader>S :CtrlSpaceSaveWorkspace<CR>
 
 vnoremap a :Tabu /\|<CR>
 noremap <Leader>n :set relativenumber!
 
-map <leader>h :wincmd h<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
-map <leader>l :wincmd l<CR>
+map <Leader>h <C-W><C-H>
+map <Leader>j <C-W><C-J>
+map <Leader>k <C-W><C-K>
+map <Leader>l <C-W><C-L>
+
 
 "  ========= ESC to switch modes LMFAO =========
 "  -- insert mode

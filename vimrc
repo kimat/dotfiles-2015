@@ -13,9 +13,8 @@ set rtp+=~/.fzf
 " set ssop-=options    " do not store global and local values in a session
 " set ssop-=folds      " do not store folds
 let mapleader=" "
-nnoremap <Leader>p :CtrlP<CR>
 " Reload Vimrc
-nnoremap <silent> <Leader>r <Esc>:w<CR>:mksession! ~/.vim/tmp.vim<CR>:so ~/.vimrc<CR>:source ~/.vim/tmp.vim<CR>
+" nnoremap <silent> <Leader>r <Esc>:w<CR>:mksession! ~/.vim/tmp.vim<CR>:so ~/.vimrc<CR>:source ~/.vim/tmp.vim<CR>
 " nnoremap <silent> <Leader>r <Esc>:w<CR>:so ~/.vimrc<CR>
 
 " ==========  TABS MANAGEMENT =========
@@ -24,7 +23,10 @@ source ~/.vim/tabs.vim
 " ========= STATUS BAR =========
 set wildmode=full
 set wildmenu
-" ========= SEARCH OPTIONS =========
+
+" ========= SWAP FILES =========
+set dir=~/tmp
+
 " ========= SEARCH OPTIONS =========
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
@@ -47,6 +49,7 @@ syntax on
 set encoding=utf-8
 set fileencodings=utf-8
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.ahk set filetype=autohotkey
 
 " ========= STYLING =========
 source ~/.vim/styling.vim

@@ -16,7 +16,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "       \ }
 " NeoBundle 'Shougo/vimshell.vim'
 "───────────────────────────────────────────────────
-
+NeoBundle 'vim-scripts/autohotkey-ahk'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'tek/vim-textobj-ruby'
 NeoBundle 'vim-ruby/vim-ruby'
@@ -32,6 +32,15 @@ NeoBundle 'tpope/vim-surround'
 "───────────────────────────────────────────────────
 
 NeoBundle 'majutsushi/tagbar'
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+\ }
+
 " [majutsushi/tagbar · GitHub](https://github.com/majutsushi/tagbar)
 
 NeoBundle 'scrooloose/syntastic'
