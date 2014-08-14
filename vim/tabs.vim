@@ -30,9 +30,6 @@ nnoremap <C-Right> :echo 'Current time is ' . strftime('%c')<CR>
 "  noremap <c-s-left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 "  nnoremap <c-s-right> <m-> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
-" -- close current tab --
-noremap <c-w> <Esc>:x<CR>
-
 " -- Always show tab bar --
 set showtabline=2   "0=no 1=if_tabs 2=always
 

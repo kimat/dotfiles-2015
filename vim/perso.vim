@@ -16,10 +16,15 @@ map <Leader>S :CtrlSpaceSaveWorkspace<CR>
 vnoremap a :Tabu /\|<CR>
 noremap <Leader>n :set relativenumber!
 
+" Switch Window
 map <Leader>h <C-W><C-H>
 map <Leader>j <C-W><C-J>
 map <Leader>k <C-W><C-K>
 map <Leader>l <C-W><C-L>
+
+" Resize Window
+map + <c-w>>
+map - <c-w><
 
 
 "  ========= ESC to switch modes LMFAO =========

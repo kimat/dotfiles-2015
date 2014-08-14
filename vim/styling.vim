@@ -6,6 +6,13 @@ set shiftround            " always indent/outdent to the nearest tabstop
 set expandtab             " use spaces instead of tabs
 set autoindent            " auto-indent
 
+" -- Make Current Window more obvious
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
+
 " -- Wrapping --
 set nowrap                " don't wrap text
 
