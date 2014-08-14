@@ -28,17 +28,29 @@ NeoBundle 'godlygeek/tabular'
 
 " NeoBundle 'bling/vim-bufferline'
 NeoBundle 'tpope/vim-surround'
+" ysiw" = surround word with quotes
+" ds*   = delte * surround
 " [surrounding or changing surrounding](https://github.com/tpope/vim-surround)
 "───────────────────────────────────────────────────
 
 NeoBundle 'majutsushi/tagbar'
+
+" Add support for markdown files in tagbar.
+" [jszakmeister/markdown2ctags](https://github.com/jszakmeister/markdown2ctags)
+" is used enable nesting in tagbar
 let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : 'markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
 \ }
 
 " [majutsushi/tagbar · GitHub](https://github.com/majutsushi/tagbar)
