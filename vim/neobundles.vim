@@ -38,20 +38,32 @@ NeoBundle 'majutsushi/tagbar'
 " Add support for markdown files in tagbar.
 " [jszakmeister/markdown2ctags](https://github.com/jszakmeister/markdown2ctags)
 " is used enable nesting in tagbar
+
+" From : [tagbar issues 70](https://github.com/majutsushi/tagbar/issues/70)
 let g:tagbar_type_markdown = {
-    \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : 'markdown2ctags.py',
-    \ 'ctagsargs' : '-f - --sort=yes',
-    \ 'kinds' : [
-        \ 's:sections',
-        \ 'i:images'
-    \ ],
-    \ 'sro' : '|',
-    \ 'kind2scope' : {
-        \ 's' : 'section',
-    \ },
-    \ 'sort': 0,
-\ }
+            \ 'ctagstype' : 'markdown',
+            \ 'kinds' : [
+                \ 'h:headings',
+                \ 'l:links',
+                \ 'i:images'
+            \ ],
+    \ "sort" : 0
+    \ }
+
+" let g:tagbar_type_markdown = {
+"     \ 'ctagstype': 'markdown',
+"     \ 'ctagsbin' : 'markdown2ctags.py',
+"     \ 'ctagsargs' : '-f - --sort=yes',
+"     \ 'kinds' : [
+"         \ 's:sections',
+"         \ 'i:images'
+"     \ ],
+"     \ 'sro' : '|',
+"     \ 'kind2scope' : {
+"         \ 's' : 'section',
+"     \ },
+"     \ 'sort': 0,
+" \ }
 
 " [majutsushi/tagbar · GitHub](https://github.com/majutsushi/tagbar)
 

@@ -12,6 +12,7 @@ map <Leader>s :call GoBuffer("previous")<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>P :set paste<CR>
 map <Leader>S :CtrlSpaceSaveWorkspace<CR>
+map <Leader>, :CtrlSpaceTabLabel<CR>
 
 vnoremap a :Tabu /\|<CR>
 noremap <Leader>n :set relativenumber!
