@@ -2,7 +2,7 @@
 	ui = auto
 	status = always
 [user]
-	name = kimat
+	name = Kimat Boven
 [core]
 	excludesfile = /root/.gitignore
 	editor = vim
