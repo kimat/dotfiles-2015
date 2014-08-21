@@ -6,15 +6,21 @@
 # argument is given, session name will be based on layout file name.
 if initialize_session "main"; then
 
-  new_window "markdown"
   #----------------
-  run_cmd "cd /vagrant/"
-  run_cmd "clear"
+  new_window "perso"
+  run_cmd "cd /c/Data"
+  run_cmd "v"
+
+  #----------------
+  new_window "ecam"
+  run_cmd "cd /c/Data/ecam"
   run_cmd "v"
 
   #---------------
   window_root "/root/dotfiles/"
   new_window "dotfiles"
+  # run_cmd 'unset TMUX'
+  # run_cmd '~/dotfiles/bin/tmuxifier s dotfiles'
   run_cmd 'v'
   split_h 40
   select_pane 1
