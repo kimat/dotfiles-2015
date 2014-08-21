@@ -1,10 +1,12 @@
+" vim:fdm=marker
+"─────────────────────────────────────────────────── DEF NEOBUNDLE
 if has('vim_starting')
   set nocompatible
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-"───────────────────────────────────────────────────
+"─────────────────────────────────────────────────── END NEOBUNDLE
 
 " NeoBundle 'Shougo/vimproc', {
 "       \ 'build' : {
@@ -15,10 +17,34 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "       \    },
 "       \ }
 " NeoBundle 'Shougo/vimshell.vim'
-"───────────────────────────────────────────────────
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
+
+" ────────────────────────────────────── Vim-signature {{{
+" :echo signature#MarksList( 'used', 'a' )
+" could be used to get : jump to next Uppercase mark
+NeoBundle 'kshenoy/vim-signature'
+
+let g:SignatureMap = {
+  \ 'Leader'             :  "m"
+\ }
+let g:SignatureMap = {
+  \ 'PlaceNextMark'      :  g:SignatureMap.Leader . ",",
+  \ 'ToggleMarkAtLine'   :  g:SignatureMap.Leader . ".",
+  \ 'PurgeMarksAtLine'   :  g:SignatureMap.Leader . "-",
+  \ 'PurgeMarks'         :  g:SignatureMap.Leader . "<Space>",
+  \ 'PurgeMarkers'       :  g:SignatureMap.Leader . "<BS>",
+  \ 'GotoNextSpotAlpha'  :  "mn",
+  \ 'GotoPrevSpotAlpha'  :  "mp",
+  \ 'ListLocalMarks'     :  "m?",
+\ }
+"}}}
+
+" NeoBundle ''
 NeoBundle 'vim-scripts/autohotkey-ahk'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'tek/vim-textobj-ruby'
+" NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-endwise'
@@ -33,6 +59,7 @@ NeoBundle 'tpope/vim-surround'
 " [surrounding or changing surrounding](https://github.com/tpope/vim-surround)
 "───────────────────────────────────────────────────
 
+" ────────────────────────────────────── Tagbar {{{
 NeoBundle 'majutsushi/tagbar'
 
 " Add support for markdown files in tagbar.
@@ -66,6 +93,7 @@ let g:tagbar_type_markdown = {
 " \ }
 
 " [majutsushi/tagbar · GitHub](https://github.com/majutsushi/tagbar)
+" }}}
 
 NeoBundle 'scrooloose/syntastic'
 " [scrooloose/syntastic · GitHub](https://github.com/scrooloose/syntastic)
@@ -77,6 +105,8 @@ NeoBundle 'Valloric/YouCompleteMe', {
   \     'unix' : './install.sh',
   \    },
 \ }
+" You might need to run :
+"~/dotfiles/vim/bundle/YouCompleteMe/install.sh
 " [Valloric/YouCompleteMe · GitHub](https://github.com/Valloric/YouCompleteMe)
 " Autocompletes : methods, filenames, directories, etc
 
@@ -118,6 +148,8 @@ let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh
 
 NeoBundle 'bronson/vim-trailing-whitespace'
 
+
+" ────────────────────────────────────── Ctrl Space {{{
 NeoBundle 'szw/vim-ctrlspace'
 let g:ctrlspace_use_tabline=2
 let g:ctrlspace_unicode_font=0
@@ -321,6 +353,9 @@ if exists("+showtabline")
   set tabline=%!MyTabLine()
 endif
 
+" }}}
+
+" Dump {{{
 " NeoBundle 'itchyny/lightline.vim'
 " " [colorfull vim modes, nicer tabs](https://github.com/itchyny/lightline.vim)
 " let g:lightline = {
@@ -347,6 +382,7 @@ endif
 
 " " If Tabline : Show just the filename
 " let g:airline#extensions#tabline#fnamemod = ':t'
+" }}}
 
 
 NeoBundle 'tpope/vim-haml'
