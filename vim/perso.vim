@@ -11,8 +11,13 @@ map <Leader>f :call GoBuffer("next")<CR>
 map <Leader>s :call GoBuffer("previous")<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>P :set paste<CR>
-map <Leader>S :CtrlSpaceSaveWorkspace<CR>
+map <Leader>S :CtrlSpaceSaveWorkspace 
+map <Leader>R :Rename 
 map <Leader>, :CtrlSpaceTabLabel<CR>
+map <Leader>X :wa<CR>:CtrlSpaceSaveWorkspace<CR>:qa!<CR>:!v<CR>
+map <Leader>y :YRShow<CR>
+" nnoremap <silent> <Leader>r <Esc>:w<CR>:mksession! ~/.vim/tmp.vim<CR>:so ~/.vimrc<CR>:source ~/.vim/tmp.vim<CR>
+" nnoremap <silent> <Leader>r <Esc>:w<CR>:so ~/.vimrc<CR>
 
 vnoremap a :Tabu /\|<CR>
 noremap <Leader>n :set relativenumber!
@@ -25,7 +30,7 @@ map <Leader>l <C-W><C-L>
 
 " Resize Window
 map + <c-w>>
-map - <c-w><
+" map - <c-w><
 
 
 "  ========= ESC to switch modes LMFAO =========
@@ -43,16 +48,11 @@ map - <c-w><
 " l : ->
 
 " allow shifting of home row one char to the right (pinky left)
-noremap m h
-
-"  ========= INSERT-NORMAL MODE =========
-noremap <tab> <Esc>
-noremap  <C-i> i
-inoremap <C-i> <Esc>
+" noremap m h
 
 "  ========= HOME-END =========
 " m was 'set mark'
-noremap M $
+" noremap M $
 noremap L $
 noremap H 0
 noremap <C-m> G

@@ -9,13 +9,13 @@ set hidden
 " ========= FZF =========
 set rtp+=~/.fzf
 
-" ========= LEADER =========
+" ========= BUFFERS =========
+if v:version >= 700
+  au BufLeave * let b:winview = winsaveview()
+  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
 " set ssop-=options    " do not store global and local values in a session
 " set ssop-=folds      " do not store folds
-let mapleader=" "
-" Reload Vimrc
-" nnoremap <silent> <Leader>r <Esc>:w<CR>:mksession! ~/.vim/tmp.vim<CR>:so ~/.vimrc<CR>:source ~/.vim/tmp.vim<CR>
-" nnoremap <silent> <Leader>r <Esc>:w<CR>:so ~/.vimrc<CR>
 
 " ==========  TABS MANAGEMENT =========
 source ~/.vim/tabs.vim
@@ -49,7 +49,12 @@ syntax on
 set encoding=utf-8
 set fileencodings=utf-8
 au BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:> com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 au BufRead,BufNewFile *.ahk set filetype=autohotkey
+" autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd FileType gitcommit setlocal spell
+" autocomplet based on spell file
+set complete+=kspell
 
 " ========= STYLING =========
 source ~/.vim/styling.vim
