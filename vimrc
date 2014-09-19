@@ -51,15 +51,30 @@ set fileencodings=utf-8
 au BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:> com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 au BufRead,BufNewFile *.ahk set filetype=autohotkey
+au BufRead,BufNewFile *.ahk e ++ff=dos
 " autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType gitcommit setlocal spell
 " autocomplet based on spell file
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 set complete+=kspell
+set foldmethod=marker
+
+" set ai
+" let g:rubycomplete_buffer_loading = 1
+" let g:rubycomplete_classes_in_global = 1
+" let g:rubycomplete_rails = 1
+" au BufNewFile,BufRead *.rb,*.rbw,*.gemspec set filetype=ruby
+
+" autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " ========= STYLING =========
 source ~/.vim/styling.vim
 
 " ========= PERSO =========
 source ~/.vim/perso.vim
+
+" ========= Virtual Box Save Box with Rails =========
+" :autocmd BufWritePost * silent execute 'touch %'
+" :autocmd BufWritePost * silent call system('touch %')
 
 " source ~/.vim/test.vim

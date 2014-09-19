@@ -1,3 +1,19 @@
+"" Encoding
+set bomb
+set ttyfast
+set binary
+
+" vnoremap < >gv
+" vnoremap > <gv
+
+"  ========= INDENTATION =========
+" Reverse default indenting keys -> shift+key to unindent
+"" Vmap for maintain Visual Mode after shifting > and <
+noremap < >
+noremap > <
+vnoremap < >gv
+vnoremap > <gv
+
 set nopaste
 
 " = HOW TO =
@@ -14,13 +30,19 @@ map <Leader>P :set paste<CR>
 map <Leader>S :CtrlSpaceSaveWorkspace 
 map <Leader>R :Rename 
 map <Leader>, :CtrlSpaceTabLabel<CR>
-map <Leader>X :wa<CR>:CtrlSpaceSaveWorkspace<CR>:qa!<CR>:!v<CR>
+map <Leader>X :wa!<CR>:CtrlSpaceSaveWorkspace<CR>:qa!<CR>
 map <Leader>y :YRShow<CR>
+map <Leader>x :za<CR>
 " nnoremap <silent> <Leader>r <Esc>:w<CR>:mksession! ~/.vim/tmp.vim<CR>:so ~/.vimrc<CR>:source ~/.vim/tmp.vim<CR>
 " nnoremap <silent> <Leader>r <Esc>:w<CR>:so ~/.vimrc<CR>
 
-vnoremap a :Tabu /\|<CR>
-noremap <Leader>n :set relativenumber!
+map <Leader>= :Tabu /\|<CR>
+noremap <Leader>n :set relativenumber!<CR>
+" noremap <silent> ww :w<CR>
+
+
+command RM :call delete(expand('%'))
+" command RM :call delete(expand('%')) | bdelete!
 
 " Switch Window
 map <Leader>h <C-W><C-H>
@@ -66,7 +88,3 @@ noremap { {(zz
 " H was 'go to first line on current scroll'
 " noremap M G
 
-"  ========= INDENTATION =========
-" Reverse default indenting keys -> shift+key to unindent
-noremap < >
-noremap > <
