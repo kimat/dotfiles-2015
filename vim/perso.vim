@@ -32,7 +32,7 @@ map <Leader>R :Rename
 map <Leader>, :CtrlSpaceTabLabel<CR>
 map <Leader>X :wa!<CR>:CtrlSpaceSaveWorkspace<CR>:qa!<CR>
 map <Leader>y :YRShow<CR>
-map <Leader>x :za<CR>
+noremap ù za
 " nnoremap <silent> <Leader>r <Esc>:w<CR>:mksession! ~/.vim/tmp.vim<CR>:so ~/.vimrc<CR>:source ~/.vim/tmp.vim<CR>
 " nnoremap <silent> <Leader>r <Esc>:w<CR>:so ~/.vimrc<CR>
 
