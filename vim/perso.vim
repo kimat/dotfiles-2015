@@ -37,7 +37,7 @@ noremap ù za
 " nnoremap <silent> <Leader>r <Esc>:w<CR>:so ~/.vimrc<CR>
 
 map <Leader>= :Tabu /\|<CR>
-noremap <Leader>n :set relativenumber!<CR>
+noremap <Leader>n :set relativenumber!<CR>:set number!<CR>
 " noremap <silent> ww :w<CR>
 
 
