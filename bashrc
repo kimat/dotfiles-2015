@@ -94,9 +94,9 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#    . /etc/bash_completion
-#fi
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
 
 # Override defaults
 EDITOR=/usr/bin/vim
@@ -122,11 +122,8 @@ source ~/.fzf.bash
 export PS1="\[$(tput setaf 208)\]"
 trap 'tput sgr0' DEBUG
 
-# Colorize Prompt : space carret only
-# export PS1="\[$(tput bold; tput setab 208)\] \[$(tput sgr0)\]"
+# Load Nodejs Npm
+[[ -s "$HOME/npm/bin" ]] && PATH="$HOME/npm/bin:$PATH"
 
-# Prompt as : special pipe symbol
-# export PS1="▌"
-
-# Prompt pwd in window title for Putty
-#export PS1='\[\033]0;$(pwd|sed "s/\/root/~/")\033\\▌\]'
+# hitting ESC in bash brings u in a vim command mode
+set -o vi
