@@ -6,4 +6,3 @@
 [core]
 	excludesfile = /root/.gitignore
 	editor = vim
-

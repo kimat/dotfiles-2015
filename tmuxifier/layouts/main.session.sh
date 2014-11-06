@@ -22,7 +22,7 @@ if initialize_session "main"; then
   # run_cmd 'unset TMUX'
   # run_cmd '~/dotfiles/bin/tmuxifier s dotfiles'
   run_cmd 'v'
-  split_h 40
+  split_h 30
   select_pane 1
   split_v 70
   select_pane 2

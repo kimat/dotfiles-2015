@@ -13,7 +13,7 @@
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-#HISTSIZE=1000
+#HISTSIZE=10000
 #HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
@@ -124,6 +124,3 @@ trap 'tput sgr0' DEBUG
 
 # Load Nodejs Npm
 [[ -s "$HOME/npm/bin" ]] && PATH="$HOME/npm/bin:$PATH"
-
-# hitting ESC in bash brings u in a vim command mode
-set -o vi

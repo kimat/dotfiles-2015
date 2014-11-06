@@ -4,6 +4,7 @@ alias bower="bower --allow-root"
 # LINUX
 alias wget="wget --continue "
 alias log="less +F +G "
+alias e="fc"
 
 # UBUNTU
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal ls
@@ -19,7 +20,10 @@ alias server="echo python -m SimpleHTTPServer"
 # TMUX
 alias t="tmux -u attach || ~/dotfiles/bin/tmuxifier s main"
 alias tl="tmuxifier-list-windows"
-alias to="tmuxifier-load-window"
+to() {
+	tmuxifier-load-window $(tl | percol)
+}
+alias to=to
 
 # VIM
 alias rmswp='find -name "*.swp" -delete'
@@ -37,6 +41,9 @@ alias vb='vim ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md
 alias ve='(cd /vagrant/ecam ; vim done.md projects.md ecam.md'
 
 # RUBY ALIASES
+alias "re"="echo $RAILS_ENV"
+alias "rp"="export RAILS_ENV=production"
+alias "rd"="export RAILS_ENV=development"
 alias bu='bundle update'
 alias bi='bundle install'
 alias bui='bundle update -j4 ;  bundle install -j4'
@@ -45,6 +52,7 @@ alias buip='bundle update ;  bundle install --without development'
 # GIT ALIASES
 # git config user.email k.boven@ecam.be
 # git config user.name BOVEN Kimat
+alias gz="git reset HEAD"
 alias gph="git push && git push heroku master"
 alias g="git"
 alias gdd="git --no-pager diff"

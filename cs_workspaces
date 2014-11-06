@@ -1,11 +1,112 @@
 CS_LAST_WORKSPACE: dotfiles
 CS_WORKSPACE_BEGIN: vim
 CS_WORKSPACE_END: vim
-CS_WORKSPACE_BEGIN: launcher
-1,,1,projects/launcher/Gemfile|projects/launcher/views/index.slim|projects/launcher/views/layout.slim|projects/launcher/config.ru|projects/launcher/public/stylesheets/sass/styles.sass|projects/launcher/sin.rb,4
-CS_WORKSPACE_END: launcher
+
 CS_WORKSPACE_BEGIN: dotfiles
-1,Vim,0,vimrc_debug|/root/.vimrc|vim/neobundles.vim|vim/perso.vim|vim/tabs.vim|.git/cs_workspaces|vim/styling.vim|vim/test.vim,2
-2,Tmux,0,tmuxifier/layouts/main.session.sh|/root/.tmux.conf,1
-3,Bash,1,/root/.bash_aliases|/root/.bashrc,0
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+exe "cd " . escape(expand("<sfile>:p:h"), ' ')
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 vim/neobundles.vim
+badd +1 vim/tabs.vim
+badd +1 vimrc_debug
+badd +1 vim/perso.vim
+badd +1 .git/cs_workspaces
+badd +1 vim/styling.vim
+badd +1 vim/test.vim
+badd +3 tmuxifier/layouts/main.session.sh
+badd +1 ~/.tmux.conf
+badd +19 tmuxifier/layouts/issues.window.sh
+badd +1 tmuxifier/layouts/launcher.window.sh
+badd +1 tmuxifier/layouts/dotfiles.session.sh
+badd +1 ~/.bash_aliases
+badd +126 ~/.bashrc
+badd +1 vimrc
+badd +1 tmuxifier/layouts/missions.window.sh
+badd +20 setup.sh
+badd +1 ~/.bash_profile
+argglobal
+silent! argdel *
+edit vim/neobundles.vim
+edit vim/tabs.vim
+edit vimrc_debug
+edit vim/perso.vim
+edit .git/cs_workspaces
+edit vim/styling.vim
+edit vim/test.vim
+edit vimrc
+let t:ctrlspace_label = 'Vim'
+edit vim/neobundles.vim
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 17 - ((16 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 013|
+tabedit tmuxifier/layouts/launcher.window.sh
+edit tmuxifier/layouts/main.session.sh
+edit /root/.tmux.conf
+edit tmuxifier/layouts/issues.window.sh
+edit tmuxifier/layouts/launcher.window.sh
+edit tmuxifier/layouts/dotfiles.session.sh
+edit tmuxifier/layouts/missions.window.sh
+let t:ctrlspace_label = 'Tmux'
+edit tmuxifier/layouts/launcher.window.sh
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 02|
+tabedit ~/.bashrc
+edit /root/.bashrc
+edit /root/.bash_aliases
+edit /root/.bash_profile
+edit setup.sh
+let t:ctrlspace_label = 'Bash'
+edit ~/.bashrc
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 16 - ((15 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+16
+normal! 015|
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToOc
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
 CS_WORKSPACE_END: dotfiles

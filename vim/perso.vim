@@ -26,7 +26,7 @@ map <Leader>p :CtrlP<CR>
 map <Leader>f :call GoBuffer("next")<CR>
 map <Leader>s :call GoBuffer("previous")<CR>
 map <Leader>t :TagbarToggle<CR>
-map <Leader>P :set paste<CR>
+map <Leader>P :set paste!<CR>
 map <Leader>S :CtrlSpaceSaveWorkspace 
 map <Leader>R :Rename 
 map <Leader>, :CtrlSpaceTabLabel<CR>

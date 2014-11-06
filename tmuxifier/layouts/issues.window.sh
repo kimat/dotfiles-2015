@@ -2,7 +2,7 @@
 window_root "/vagrant/projects/issues/"
 new_window "issues"
 run_cmd 'v'
-split_h 40
+split_h 30
 select_pane 1
 run_cmd "clear"
 

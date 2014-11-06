@@ -1,10 +1,16 @@
+" Folding {{{
+function! MyFoldText()
+  return ''.getline(v:foldstart)
+endfunction
+set foldtext=MyFoldText()
+" }}}
+
 " -- Indentation --
 set tabstop=2             " tab spacing
 set softtabstop=2         " unify
 set shiftwidth=2          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
 set expandtab             " use spaces instead of tabs
-set autoindent            " auto-indent
 
 " -- Make Current Window more obvious
 augroup BgHighlight
@@ -19,10 +25,11 @@ set nowrap                " don't wrap text
 " -- Colors --
 set t_Co=256              " 256-color use color numbers with cterm..
 syntax enable
+colorscheme Tomorrow-Night-Eighties
+" colorscheme gotham256
+" colorscheme railscasts
 " colorscheme elflord
 " colorscheme desert
-colorscheme Tomorrow-Night-Eighties
-" colorscheme railscasts
 set background=dark
 
 " -- bottom bar --
@@ -42,6 +49,7 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
+set number
 nnoremap <C-n> :call NumberToggle()<cr>
 
 " -- tab line (top) --

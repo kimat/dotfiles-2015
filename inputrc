@@ -1,0 +1,51 @@
+$include /etc/Inputrc
+# TAB: menu-complete
+"\e[Z": menu-complete-backward
+# vim-like menu-complete (set wildmode=list:full wildchar=<tab>)
+set wildmode=list:full
+
+# Make Tab autocomplete regardless of filename case
+set completion-ignore-case on
+
+# List all matches in case multiple possible completions are possible
+set show-all-if-ambiguous On
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
+# Show all autocomplete results at once
+set page-completions off
+
+# If there are more than 200 possible completions for a word, ask to show them all
+set completion-query-items 200
+
+# Show extra file information when completing, like `ls -F` does
+set visible-stats on
+
+set show-all-if-unmodified Off
+
+set menu-complete-display-prefix On
+# Tab:      menu-complete
+#  a la <S-Tab>, <C-L> and <C-D>
+# XXX menu-complete-backward is available for bash >= 4
+#"\e[Z":   menu-complete-backward
+#     So here's a workaround, see: http://brettterpstra.com/2011/09/25/quick-tip-some-inputrc-fun/
+# "\e[Z":   "\e-1\C-i"
+# "\e\C-d": possible-completions
+# "\e\C-l": complete
+#
+
+# hitting ESC in bash brings u in a vim command mode
+set editing-mode vi
+$if mode=vi
+
+set keymap vi-command
+# these are for vi-command mode
+Control-l: clear-screen
+
+set keymap vi-insert
+# these are for vi-insert mode
+Control-l: clear-screen
+
+$endif
+

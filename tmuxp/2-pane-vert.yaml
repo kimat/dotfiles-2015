@@ -1,0 +1,16 @@
+session_name: 2-pane-vert
+windows:
+- layout: a04f,102x51,0,0[102x25,0,0,1,102x25,0,26,2]
+  options:
+    automatic-rename: 'off'
+  panes:
+  - pane
+  - pane
+  start_directory: /root/dotfiles/tmuxp
+  window_name: my test window
+- layout: b180,102x51,0,0,3
+  options: {}
+  panes:
+  - pane
+  start_directory: /root/dotfiles/tmuxp
+  window_name: bash

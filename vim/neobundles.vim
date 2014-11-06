@@ -1,26 +1,20 @@
 " vim:fdm=marker
-"─────────────────────────────────────────────────── DEF NEOBUNDLE
+" Neobundle {{{
 if has('vim_starting')
   set nocompatible
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-"─────────────────────────────────────────────────── END NEOBUNDLE
-
-" NeoBundle 'Shougo/vimproc', {
-"       \ 'build' : {
-"       \     'windows' : 'make -f make_mingw32.mak',
-"       \     'cygwin' : 'make -f make_cygwin.mak',
-"       \     'mac' : 'make -f make_mac.mak',
-"       \     'unix' : 'make -f make_unix.mak',
-"       \    },
-"       \ }
-" NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-fugitive'
-
-" ────────────────────────────────────── Vim-signature {{{
+" }}}
+" Testing {{{
+NeoBundle 'terryma/vim-multiple-cursors'
+" }}}
+" Slow {{{
+" NeoBundle 'airblade/vim-gitgutter'
+" NeoBundle 'tpope/vim-fugitive'
+" }}}
+" Vim-signature {{{
 " :echo signature#MarksList( 'used', 'a' )
 " could be used to get : jump to next Uppercase mark
 NeoBundle 'kshenoy/vim-signature'
@@ -39,13 +33,9 @@ let g:SignatureMap = {
   \ 'ListLocalMarks'     :  "m?",
 \ }
 "}}}
-
-" NeoBundle ''
-NeoBundle 'vim-scripts/autohotkey-ahk'
+" {{{
 NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'tek/vim-textobj-ruby'
 " NeoBundle 'nelstrom/vim-textobj-rubyblock'
-NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'godlygeek/tabular'
@@ -57,9 +47,8 @@ NeoBundle 'tpope/vim-surround'
 " ysiw" = surround word with quotes
 " ds*   = delte * surround
 " [surrounding or changing surrounding](https://github.com/tpope/vim-surround)
-"───────────────────────────────────────────────────
-
-" ────────────────────────────────────── Tagbar {{{
+" }}}
+" Tagbar {{{
 NeoBundle 'majutsushi/tagbar'
 
 " Add support for markdown files in tagbar.
@@ -71,8 +60,6 @@ let g:tagbar_type_markdown = {
             \ 'ctagstype' : 'markdown',
             \ 'kinds' : [
                 \ 'h:headings',
-                \ 'l:links',
-                \ 'i:images'
             \ ],
     \ "sort" : 0
     \ }
@@ -94,21 +81,64 @@ let g:tagbar_type_markdown = {
 
 " [majutsushi/tagbar · GitHub](https://github.com/majutsushi/tagbar)
 " }}}
+" Languages {{{
+NeoBundle 'vim-ruby/vim-ruby'
+" NeoBundle 'nelstrom/vim-markdown-folding'
+function MarkdownLevel()
+  let h = matchstr(getline(v:lnum), '^#\+')
+  if empty(h)
+    return "="
+  else
+    return ">" . len(h)
+  endif
+endfunction
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+au BufEnter *.md setlocal foldmethod=expr
+" Folding {{{
+function! MyFoldText()
+  return ''.getline(v:foldstart)
+endfunction
+setlocal foldtext=MyFoldText()
+" }}}
 
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'plasticboy/vim-markdown'
+" [full markdown support (folding, fenced-code-blocks)](https://github.com/plasticboy/vim-markdown)
+" [Markdown with Fenced Code Blocks in Vim](https://coderwall.com/p/ftqcla)
+" [Enabling markdown highlighting in Vim - StackOverflow](http://stackoverflow.com/questions/10964681/enabling-markdown-highlighting-in-vim)
+let g:vim_markdown_folding_disabled=1
+" let g:vim_markdown_initial_foldlevel=0
+" :ls /usr/share/vim/vim74/syntax
+let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh', 'vim', 'yaml', 'yml=yaml', 'slim' , 'sass']
+NeoBundle 'tek/vim-textobj-ruby'
+NeoBundle 'vim-scripts/autohotkey-ahk'
+NeoBundle 'tpope/vim-rails'
+" :Econtroller %Tab%
+" :Eview %Tab%
+" [for rails : syntax, helpers](https://github.com/tpope/vim-rails)
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'slim-template/vim-slim'
+" [slim syntax](
+" https://github.com/slim-template/vim-slim
+NeoBundle 'tpope/vim-haml'
+" [haml, sass syntax](https://github.com/tpope/vim-haml)
+" }}}
+" Code Verification {{{
+" NeoBundle 'scrooloose/syntastic'
 " [scrooloose/syntastic · GitHub](https://github.com/scrooloose/syntastic)
 " List syntax errors in file on :w
-
-NeoBundle 'Valloric/YouCompleteMe', {
-  \ 'build' : {
-  \     'mac' : './install.sh',
-  \     'unix' : './install.sh',
-  \    },
-\ }
+" }}}
+" Auto Completion {{{
+" NeoBundle 'Valloric/YouCompleteMe', {
+"   \ 'build' : {
+"   \     'mac' : './install.sh',
+"   \     'unix' : './install.sh',
+"   \    },
+" \ }
 " You might need to run :
 "~/dotfiles/vim/bundle/YouCompleteMe/install.sh
 " [Valloric/YouCompleteMe · GitHub](https://github.com/Valloric/YouCompleteMe)
 " Autocompletes : methods, filenames, directories, etc
+" }}}
 
 NeoBundle 'danro/rename.vim'
 " [danro/rename.vim · GitHub](https://github.com/danro/rename.vim)
@@ -124,32 +154,14 @@ NeoBundle 'vim-scripts/YankRing.vim'
 " [share clipboard between tabs](https://github.com/vim-scripts/YankRing.vim)
 " :YRShow -> u(pdate),d(elete),p(aste),Enter==Paste
 
+" Styling {{{
 NeoBundle 'flazz/vim-colorschemes'
 " [color themes pack](https://github.com/flazz/vim-colorschemes)
-
-NeoBundle 'tpope/vim-rails'
-" [for rails : syntax, helpers](https://github.com/tpope/vim-rails)
-
-NeoBundle 'kchmck/vim-coffee-script'
-
-NeoBundle 'slim-template/vim-slim'
-" [slim syntax](
-" https://github.com/slim-template/vim-slim
-
-NeoBundle 'plasticboy/vim-markdown'
-" [full markdown support (folding, fenced-code-blocks)](https://github.com/plasticboy/vim-markdown)
-" [Markdown with Fenced Code Blocks in Vim](https://coderwall.com/p/ftqcla)
-" [Enabling markdown highlighting in Vim - StackOverflow](http://stackoverflow.com/questions/10964681/enabling-markdown-highlighting-in-vim)
-let g:vim_markdown_folding_disabled=1
-" let g:vim_markdown_initial_foldlevel=1
-
-" :ls /usr/share/vim/vim74/syntax
-let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh', 'vim', 'yaml', 'yml=yaml', 'slim' , 'sass']
-
+NeoBundle 'whatyouhide/vim-gotham'
 NeoBundle 'bronson/vim-trailing-whitespace'
+" }}}
 
-
-" ────────────────────────────────────── Ctrl Space {{{
+" Ctrl Space {{{
 NeoBundle 'szw/vim-ctrlspace'
 let g:ctrlspace_use_tabline=2
 let g:ctrlspace_unicode_font=0
@@ -354,7 +366,6 @@ if exists("+showtabline")
 endif
 
 " }}}
-
 " Dump {{{
 " NeoBundle 'itchyny/lightline.vim'
 " " [colorfull vim modes, nicer tabs](https://github.com/itchyny/lightline.vim)
@@ -384,10 +395,7 @@ endif
 " let g:airline#extensions#tabline#fnamemod = ':t'
 " }}}
 
-
-NeoBundle 'tpope/vim-haml'
-" [haml, sass syntax](https://github.com/tpope/vim-haml)
-
-" =============================================
+" Neobundle Pt.2 {{{
 call neobundle#end()
 NeoBundleCheck
+" }}}

@@ -9,7 +9,7 @@
 tab all
 
 " -- new tab --
-nmap <c-t> :tabedit
+nmap <c-t> :tabedit 
 
 " -- switch tabs --
 nnoremap <C-Left> gt

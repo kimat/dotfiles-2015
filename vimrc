@@ -50,8 +50,8 @@ set encoding=utf-8
 set fileencodings=utf-8
 au BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:> com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
-au BufRead,BufNewFile *.ahk set filetype=autohotkey
 au BufRead,BufNewFile *.ahk e ++ff=dos
+au BufRead,BufNewFile *.ahk set filetype=autohotkey
 " autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType gitcommit setlocal spell
 " autocomplet based on spell file

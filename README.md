@@ -9,3 +9,7 @@
 - git
 - bashrc
 - bash-aliases
+
+
+# Todo :
+- ahk for vim contains ^M, needs dos2unix or fork
