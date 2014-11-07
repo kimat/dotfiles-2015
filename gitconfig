@@ -3,6 +3,7 @@
 	status = always
 [user]
 	name = Kimat Boven
+	email = skimat@gmail.com
 [core]
 	excludesfile = /root/.gitignore
 	editor = vim

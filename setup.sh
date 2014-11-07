@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # make symlinks to these folders
 ln -s ~/dotfiles/vim -T ~/.vim
 ln -s ~/dotfiles/fzf ~/.fzf
