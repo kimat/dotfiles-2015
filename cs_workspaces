@@ -20,16 +20,16 @@ badd +1 vim/perso.vim
 badd +1 .git/cs_workspaces
 badd +1 vim/styling.vim
 badd +1 vim/test.vim
-badd +3 tmuxifier/layouts/main.session.sh
+badd +1 tmuxifier/layouts/main.session.sh
 badd +1 ~/.tmux.conf
-badd +19 tmuxifier/layouts/issues.window.sh
+badd +1 tmuxifier/layouts/issues.window.sh
 badd +1 tmuxifier/layouts/launcher.window.sh
 badd +1 tmuxifier/layouts/dotfiles.session.sh
 badd +1 ~/.bash_aliases
-badd +126 ~/.bashrc
+badd +1 ~/.bashrc
 badd +1 vimrc
 badd +1 tmuxifier/layouts/missions.window.sh
-badd +20 setup.sh
+badd +1 setup.sh
 badd +1 ~/.bash_profile
 argglobal
 silent! argdel *
@@ -49,13 +49,13 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:l = 17 - ((16 * winheight(0) + 25) / 50)
+let s:l = 17 - ((15 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 17
-normal! 013|
-tabedit tmuxifier/layouts/launcher.window.sh
+normal! 01|
+tabedit ~/.tmux.conf
 edit tmuxifier/layouts/main.session.sh
 edit /root/.tmux.conf
 edit tmuxifier/layouts/issues.window.sh
@@ -63,22 +63,22 @@ edit tmuxifier/layouts/launcher.window.sh
 edit tmuxifier/layouts/dotfiles.session.sh
 edit tmuxifier/layouts/missions.window.sh
 let t:ctrlspace_label = 'Tmux'
-edit tmuxifier/layouts/launcher.window.sh
+edit ~/.tmux.conf
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:l = 1 - ((0 * winheight(0) + 25) / 50)
+let s:l = 49 - ((40 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 02|
+49
+normal! 050|
 tabedit ~/.bashrc
-edit /root/.bashrc
 edit /root/.bash_aliases
+edit /root/.bashrc
 edit /root/.bash_profile
 edit setup.sh
 let t:ctrlspace_label = 'Bash'
@@ -89,13 +89,13 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:l = 16 - ((15 * winheight(0) + 25) / 50)
+let s:l = 16 - ((14 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 16
 normal! 015|
-tabnext 1
+tabnext 2
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
