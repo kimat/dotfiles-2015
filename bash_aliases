@@ -26,6 +26,7 @@ to() {
 alias to=to
 
 # VIM
+alias vim="nvim"
 alias rmswp='find -name "*.swp" -delete'
 
 v() {
