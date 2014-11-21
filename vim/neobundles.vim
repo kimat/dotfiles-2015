@@ -8,7 +8,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 " Testing {{{
-NeoBundle 'terryma/vim-multiple-cursors'
+
+" NeoBundle 'kristijanhusak/vim-multiple-cursors/'
+" need to disable <C-N> mapping in yankring
+" let g:multi_cursor_normal_maps = {'f': 1, 't': 1, 'F': 1, 'T':1, 'c': 1}
+
 " }}}
 " Slow {{{
 " NeoBundle 'airblade/vim-gitgutter'
@@ -17,21 +21,22 @@ NeoBundle 'terryma/vim-multiple-cursors'
 " Vim-signature {{{
 " :echo signature#MarksList( 'used', 'a' )
 " could be used to get : jump to next Uppercase mark
-NeoBundle 'kshenoy/vim-signature'
 
-let g:SignatureMap = {
-  \ 'Leader'             :  "m"
-\ }
-let g:SignatureMap = {
-  \ 'PlaceNextMark'      :  g:SignatureMap.Leader . ",",
-  \ 'ToggleMarkAtLine'   :  g:SignatureMap.Leader . ".",
-  \ 'PurgeMarksAtLine'   :  g:SignatureMap.Leader . "-",
-  \ 'PurgeMarks'         :  g:SignatureMap.Leader . "<Space>",
-  \ 'PurgeMarkers'       :  g:SignatureMap.Leader . "<BS>",
-  \ 'GotoNextSpotAlpha'  :  "mn",
-  \ 'GotoPrevSpotAlpha'  :  "mp",
-  \ 'ListLocalMarks'     :  "m?",
-\ }
+" NeoBundle 'kshenoy/vim-signature'
+" let g:SignatureMap = {
+"   \ 'Leader'             :  "m"
+" \ }
+" let g:SignatureMap = {
+"   \ 'PlaceNextMark'      :  g:SignatureMap.Leader . ",",
+"   \ 'ToggleMarkAtLine'   :  g:SignatureMap.Leader . ".",
+"   \ 'PurgeMarksAtLine'   :  g:SignatureMap.Leader . "-",
+"   \ 'PurgeMarks'         :  g:SignatureMap.Leader . "<Space>",
+"   \ 'PurgeMarkers'       :  g:SignatureMap.Leader . "<BS>",
+"   \ 'GotoNextSpotAlpha'  :  "mn",
+"   \ 'GotoPrevSpotAlpha'  :  "mp",
+"   \ 'ListLocalMarks'     :  "m?",
+" \ }
+
 "}}}
 " {{{
 NeoBundle 'kana/vim-textobj-user'
@@ -108,7 +113,9 @@ setlocal foldtext=MyFoldText()
 let g:vim_markdown_folding_disabled=1
 " let g:vim_markdown_initial_foldlevel=0
 " :ls /usr/share/vim/vim74/syntax
-let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh', 'vim', 'yaml', 'yml=yaml', 'slim' , 'sass']
+" SLOW let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh', 'vim', 'yaml', 'yml=yaml', 'slim' , 'sass']
+let g:markdown_fenced_languages = ['rb=ruby', 'ruby', 'sh', 'shell=sh', 'bash=sh']
+
 NeoBundle 'tek/vim-textobj-ruby'
 NeoBundle 'vim-scripts/autohotkey-ahk'
 NeoBundle 'tpope/vim-rails'
