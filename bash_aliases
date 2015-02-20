@@ -25,10 +25,16 @@ to() {
 }
 alias to=to
 
+
+
 # VIM
-alias vim="nvim"
+alias ":e"="vim"
 alias rmswp='find -name "*.swp" -delete'
 
+alias vim="nvim"
+vv() {
+  \vim -c ":CtrlSpaceLoadWorkspace $1"
+}
 v() {
   vim -c ":CtrlSpaceLoadWorkspace $1"
 }
@@ -42,22 +48,25 @@ alias vb='vim ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md
 alias ve='(cd /vagrant/ecam ; vim done.md projects.md ecam.md'
 
 # RUBY ALIASES
+alias "foreman"="foreman -e /dev/null"
 alias "re"="echo $RAILS_ENV"
 alias "rp"="export RAILS_ENV=production"
 alias "rd"="export RAILS_ENV=development"
 alias bu='bundle update'
 alias bi='bundle install'
 alias bui='bundle update -j4 ;  bundle install -j4'
-alias buip='bundle update ;  bundle install --without development'
+alias buip='bundle update -j4 ;  bundle install -j4 --without development'
 
 # GIT ALIASES
 # git config user.email k.boven@ecam.be
 # git config user.name BOVEN Kimat
+alias gd="tmux resize-pane -Z ; git-icdiff --cached ; tmux resize-pane -Z"
+alias gdd="tmux resize-pane -Z ; git-icdiff ; tmux resize-pane -Z"
 alias gz="git reset HEAD"
 alias gph="git push && git push heroku master"
 alias g="git"
-alias gdd="git --no-pager diff"
-alias gd="git --no-pager diff --cached"
+# alias gdd="git --no-pager diff"
+# alias gd="git --no-pager diff --cached"
 alias ga="git add "
 alias gal="git add --all"
 alias gs="watch -t -n 1 --color git status --short"
