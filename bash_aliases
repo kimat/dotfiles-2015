@@ -48,10 +48,11 @@ alias vb='vim ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md
 alias ve='(cd /vagrant/ecam ; vim done.md projects.md ecam.md'
 
 # RUBY ALIASES
-alias "foreman"="foreman -e /dev/null"
+alias "rs"="rails server -b0.0.0.0"
+alias "rc"="rails console"
+# alias "foreman"="foreman -e /dev/null "
+alias "fd"="foreman start -f Procfile.dev -e /dev/null"
 alias "re"="echo $RAILS_ENV"
-alias "rp"="export RAILS_ENV=production"
-alias "rd"="export RAILS_ENV=development"
 alias bu='bundle update'
 alias bi='bundle install'
 alias bui='bundle update -j4 ;  bundle install -j4'
