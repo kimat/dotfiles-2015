@@ -6,6 +6,23 @@ alias wget="wget --continue "
 alias log="less +F +G "
 alias e="fc"
 
+# sshl() {
+#   egrep '^Host\s(.*)$' ~/.ssh/config | awk '{print $2}' | percol
+# }
+# alias sshl=sshl
+
+s() {
+  tmux rename-window "$1-prod"
+  ssh "$1"
+}
+alias s=s
+
+# alias s='h =$(egrep "^Host\s(.*)$" ~/.ssh/config | cut -d" " -f2 | percol) ; ssh $h'
+# tmux rename-window "$h"
+# ssh $h
+# alias s="egrep \"^Host\s(.*)$\" ~/.ssh/config | awk '{print $2}' | percol | xargs ssh"
+
+
 # UBUNTU
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal ls
 alias apts="apt-cache search"
