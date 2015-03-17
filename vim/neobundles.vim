@@ -9,15 +9,16 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 " Testing {{{
 
+" [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
+" NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundle 'kristijanhusak/vim-multiple-cursors/'
 " need to disable <C-N> mapping in yankring
 " let g:multi_cursor_normal_maps = {'f': 1, 't': 1, 'F': 1, 'T':1, 'c': 1}
 
 " }}}
 " Slow {{{
-" NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'airblade/vim-gitgutter'
 " NeoBundle 'tpope/vim-fugitive'
-" }}}
 " Vim-signature {{{
 " :echo signature#MarksList( 'used', 'a' )
 " could be used to get : jump to next Uppercase mark
@@ -38,6 +39,29 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " \ }
 
 "}}}
+" }}}
+
+" Move in code {{{
+
+NeoBundle 'boucherm/ShowMotion'
+" config {{{
+"Show motion for words:
+nnoremap <silent> w w:call g:Highw()<CR>:call g:HighW()<CR>
+nnoremap <silent> W W:call g:Highw()<CR>:call g:HighW()<CR>
+nnoremap <silent> b b:call g:Highb()<CR>:call g:HighB()<CR>
+nnoremap <silent> B B:call g:Highb()<CR>:call g:HighB()<CR>
+nnoremap <silent> e e:call g:Highe()<CR>:call g:HighE()<CR>
+nnoremap <silent> E E:call g:Highe()<CR>:call g:HighE()<CR>
+"Show motion for chars:
+nnoremap f :call g:FindChar( 'f', "forward" )<CR>
+nnoremap t :call g:FindChar( 't', "forward" )<CR>
+nnoremap F :call g:FindChar( 'F', "backward" )<CR>
+nnoremap T :call g:FindChar( 'T', "backward" )<CR>
+nnoremap ; :call g:SeekRepeat()<CR>:call g:HighRepeat()<CR>
+nnoremap , :call g:SeekReverse()<CR>:call g:HighReverse()<CR>
+" }}}
+
+" }}}
 " {{{
 NeoBundle 'kana/vim-textobj-user'
 " NeoBundle 'nelstrom/vim-textobj-rubyblock'
@@ -87,6 +111,9 @@ let g:tagbar_type_markdown = {
 " [majutsushi/tagbar · GitHub](https://github.com/majutsushi/tagbar)
 " }}}
 " Languages {{{
+" [gabrielelana/vim-markdown](https://github.com/gabrielelana/vim-markdown)
+NeoBundle 'bohrshaw/vim-vimperator-syntax'
+au BufEnter _vimperatorrc setlocal syntax=vimperator
 NeoBundle 'vim-ruby/vim-ruby'
 " NeoBundle 'nelstrom/vim-markdown-folding'
 function MarkdownLevel()
@@ -158,7 +185,11 @@ let g:ctrlp_clear_cache_on_exit = 0
 " [fisadev/vim-ctrlp-cmdpalette](https://github.com/fisadev/vim-ctrlp-cmdpalette)
 
 NeoBundle 'vim-scripts/YankRing.vim'
+if has('nvim')
+	set unnamedclip
+endif
 " [share clipboard between tabs](https://github.com/vim-scripts/YankRing.vim)
+" https://github.com/vim-scripts/YankRing.vim
 " :YRShow -> u(pdate),d(elete),p(aste),Enter==Paste
 
 " Styling {{{
@@ -322,16 +353,17 @@ if exists("+showtabline")
       " Reset Color and
       " Add Buffer Number
       " Highlight non saved
-      if getbufvar(str2nr(b_nb), '&modified')
-        let ret .= '%#TabLineFill#'
-        let ret .= Smallify_Number(b_nb)
-        let l_left .= Smallify_Number(b_nb)
-        let ret .= '%#TabLine#'
-      else
-        let ret .= '%#TabLine#'
-        let ret .= Smallify_Number(b_nb)
-        let l_left .= Smallify_Number(b_nb)
-      endif
+					" if getbufvar(str2nr(b_nb), '&modified')
+					"   let ret .= '%#TabLineFill#'
+					"   let ret .= Smallify_Number(b_nb)
+					"   let l_left .= Smallify_Number(b_nb)
+					"   let ret .= '%#TabLine#'
+					" else
+					"   let ret .= '%#TabLine#'
+					"   let ret .= Smallify_Number(b_nb)
+					"   let l_left .= Smallify_Number(b_nb)
+					" endif
+			let ret .= '%#TabLine#'
 
       " Add Separator
       let ret .= ' | '
