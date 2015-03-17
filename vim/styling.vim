@@ -8,9 +8,9 @@ set foldtext=MyFoldText()
 " -- Indentation --
 set tabstop=2             " tab spacing
 set softtabstop=2         " unify
+set expandtab             " use spaces instead of tabs
 set shiftwidth=2          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
-set expandtab             " use spaces instead of tabs
 
 " -- Make Current Window more obvious
 augroup BgHighlight
@@ -40,7 +40,7 @@ set relativenumber         " or set number   for line numbers
 hi LineNr ctermfg=darkgray ctermbg=none
 
 " -- cursor line --
-set cursorline
+set cursorline cursorcolumn
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
