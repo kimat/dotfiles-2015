@@ -1,3 +1,9 @@
+" vim:fdm=marker
+" NeoVim {{{
+if has('nvim')
+	set unnamedclip
+endif
+" }}}
 "" Encoding
 set bomb
 set ttyfast
