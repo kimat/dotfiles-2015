@@ -129,3 +129,6 @@ trap 'tput sgr0' DEBUG
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+### Added by the Heroku Toolbelt
+# export PATH="/usr/local/heroku/bin:$PATH"

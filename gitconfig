@@ -7,3 +7,5 @@
 [core]
 	excludesfile = /root/.gitignore
 	editor = vim
+[heroku]
+	account = tobe
