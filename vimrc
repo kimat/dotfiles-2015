@@ -78,3 +78,4 @@ source ~/.vim/perso.vim
 " :autocmd BufWritePost * silent call system('touch %')
 
 " source ~/.vim/test.vim
+set expandtab
