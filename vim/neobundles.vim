@@ -62,7 +62,8 @@ nnoremap , :call g:SeekReverse()<CR>:call g:HighReverse()<CR>
 " }}}
 
 " }}}
-" {{{
+" Writing code {{{
+NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'kana/vim-textobj-user'
 " NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'tpope/vim-commentary'
