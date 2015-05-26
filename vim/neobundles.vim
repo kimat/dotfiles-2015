@@ -9,6 +9,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 " Testing {{{
 
+NeoBundle 'epeli/slimux'
+
+let g:slimux_select_from_current_window = 1
+
 " [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
 " NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundle 'kristijanhusak/vim-multiple-cursors/'
@@ -44,21 +48,34 @@ NeoBundle 'airblade/vim-gitgutter'
 " Move in code {{{
 
 NeoBundle 'boucherm/ShowMotion'
-" config {{{
-"Show motion for words:
-nnoremap <silent> w w:call g:Highw()<CR>:call g:HighW()<CR>
-nnoremap <silent> W W:call g:Highw()<CR>:call g:HighW()<CR>
-nnoremap <silent> b b:call g:Highb()<CR>:call g:HighB()<CR>
-nnoremap <silent> B B:call g:Highb()<CR>:call g:HighB()<CR>
-nnoremap <silent> e e:call g:Highe()<CR>:call g:HighE()<CR>
-nnoremap <silent> E E:call g:Highe()<CR>:call g:HighE()<CR>
+" boucherm/ShowMotion config {{{
+highlight SM_SmallMotionGroup cterm=italic                ctermbg=53 gui=italic                guibg=#5f005f
+highlight SM_BigMotionGroup   cterm=italic,bold,underline ctermbg=54 gui=italic,bold,underline guibg=#5f0087
+highlight SM_CharSearchGroup  cterm=italic,bold           ctermbg=4  gui=italic,bold           guibg=#3f6691
+
+"*** Highlights both big and small motions
+nmap w <Plug>(show-motion-both-w)
+nmap W <Plug>(show-motion-both-W)
+nmap b <Plug>(show-motion-both-b)
+nmap B <Plug>(show-motion-both-B)
+nmap e <Plug>(show-motion-both-e)
+nmap E <Plug>(show-motion-both-E)
+
+"*** Only highlights motions corresponding to the one you typed
+nmap w <Plug>(show-motion-w)
+nmap W <Plug>(show-motion-W)
+nmap b <Plug>(show-motion-b)
+nmap B <Plug>(show-motion-B)
+nmap e <Plug>(show-motion-e)
+nmap E <Plug>(show-motion-E)
+
 "Show motion for chars:
-nnoremap f :call g:FindChar( 'f', "forward" )<CR>
-nnoremap t :call g:FindChar( 't', "forward" )<CR>
-nnoremap F :call g:FindChar( 'F', "backward" )<CR>
-nnoremap T :call g:FindChar( 'T', "backward" )<CR>
-nnoremap ; :call g:SeekRepeat()<CR>:call g:HighRepeat()<CR>
-nnoremap , :call g:SeekReverse()<CR>:call g:HighReverse()<CR>
+nmap f <Plug>(show-motion-f)
+nmap t <Plug>(show-motion-t)
+nmap F <Plug>(show-motion-F)
+nmap T <Plug>(show-motion-T)
+nmap ; <Plug>(show-motion-;)
+nmap , <Plug>(show-motion-,)
 " }}}
 
 " }}}
@@ -74,6 +91,7 @@ NeoBundle 'godlygeek/tabular'
 
 " NeoBundle 'bling/vim-bufferline'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'ervandew/supertab'
 " ysiw" = surround word with quotes
 " ds*   = delte * surround
 " [surrounding or changing surrounding](https://github.com/tpope/vim-surround)
@@ -127,6 +145,7 @@ function MarkdownLevel()
 endfunction
 au BufEnter *.md setlocal foldexpr=MarkdownLevel()
 au BufEnter *.md setlocal foldmethod=expr
+
 " Folding {{{
 function! MyFoldText()
   return ''.getline(v:foldstart)
@@ -175,6 +194,7 @@ NeoBundle 'tpope/vim-haml'
 " Autocompletes : methods, filenames, directories, etc
 " }}}
 
+" NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'danro/rename.vim'
 " [danro/rename.vim · GitHub](https://github.com/danro/rename.vim)
 
@@ -186,9 +206,11 @@ let g:ctrlp_clear_cache_on_exit = 0
 " [fisadev/vim-ctrlp-cmdpalette](https://github.com/fisadev/vim-ctrlp-cmdpalette)
 
 NeoBundle 'vim-scripts/YankRing.vim'
-if has('nvim')
-	set unnamedclip
-endif
+" if has('nvim')
+" 	set unnamedclip
+" endif
+let g:yankring_clipboard_monitor=0
+
 " [share clipboard between tabs](https://github.com/vim-scripts/YankRing.vim)
 " https://github.com/vim-scripts/YankRing.vim
 " :YRShow -> u(pdate),d(elete),p(aste),Enter==Paste
@@ -201,9 +223,9 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " }}}
 
 " Ctrl Space {{{
-NeoBundle 'szw/vim-ctrlspace'
+NeoBundle 'szw/vim-ctrlspace',
 let g:ctrlspace_use_tabline=2
-let g:ctrlspace_unicode_font=0
+" let g:ctrlspace_unicode_font=0
 let g:ctrlspace_use_tabline=0
 
 if exists("+showtabline")
