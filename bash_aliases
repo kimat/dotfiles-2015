@@ -74,7 +74,7 @@ alias "re"="echo $RAILS_ENV"
 alias bu='bundle update'
 alias bi='bundle install'
 alias bui='bundle update -j4 ;  bundle install -j4'
-alias buip='bundle update -j4 ;  bundle install -j4 --without development'
+# alias buip='bundle update -j4 ;  bundle install -j4 --without development'
 
 # GIT ALIASES
 # git config user.email k.boven@ecam.be
