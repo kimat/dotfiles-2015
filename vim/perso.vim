@@ -33,6 +33,21 @@ set nopaste
 " :map <CTRL-P>
 " set showcmd
 
+" Local Leader key {{{
+let maplocalleader ="e"
+" map <localleader>e :CtrlP<CR>
+" Slimux {{{
+map <localleader>l :SlimuxREPLSendLine<CR>
+map <localleader>e vip:SlimuxREPLSendSelection<CR>
+vmap <localleader>e :SlimuxREPLSendSelection<CR>
+vmap <localleader>l :SlimuxREPLSendSelection<CR>
+" To run markdown code blocks
+map <localleader>m vip?`<CR><Esc>jV/`<CR>k:SlimuxREPLSendSelection<CR>
+" }}}
+
+" }}}
+
+" Leader key {{{
 let mapleader = "\<tab>"
 map <Leader>p :CtrlP<CR>
 map <Leader>f :call GoBuffer("next")<CR>
