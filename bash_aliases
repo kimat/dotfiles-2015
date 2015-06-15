@@ -22,12 +22,12 @@ alias s=s
 # ssh $h
 # alias s="egrep \"^Host\s(.*)$\" ~/.ssh/config | awk '{print $2}' | percol | xargs ssh"
 
-
 # UBUNTU
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal ls
 alias apts="apt-cache search"
 alias apti="apt-get install -y --no-install-recommends"
 alias aptv="apt-cache madison"
+alias aptI="apt-cache madison"
 alias aptu="apt-get update"
 alias aptU="apt-get --purge autoremove"
 alias sl="ls"
