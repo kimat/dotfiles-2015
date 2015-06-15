@@ -1,9 +1,15 @@
-" vim:fdm=marker
-" NeoVim {{{
-if has('nvim')
-	set unnamedclip
-endif
+" Manage clipboard {{{
+" set clipboard=unnamed
+" vmap <C-c> :w! ~/.vbuf<CR>
+" nmap <C-c> :.w! ~/.vbuf<CR>
+" nmap <C-v> :r ~/.vbuf<CR>
+" if has('nvim')
+" " 	set unnamedclip
+"   set clipboard+=unnamed
+" endif
 " }}}
+
+" vim:fdm=marker
 "" Encoding
 set bomb
 set ttyfast

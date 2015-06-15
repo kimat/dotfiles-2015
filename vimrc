@@ -1,5 +1,5 @@
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!  filetype off
-set clipboard=unnamed
+"
 
 " =========  NEOBUNDLE  =========
 source ~/.vim/neobundles.vim
