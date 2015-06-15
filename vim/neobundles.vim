@@ -96,6 +96,8 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'godlygeek/tabular'
+" example usage
+" :'<,'>Tabularize /,/l0r1
 " [align tables & /'|','=',... ](https://github.com/godlygeek/tabular)
 " :Tab / /l0    _,_    :Tab /=    _,_  :Tab /|
 
