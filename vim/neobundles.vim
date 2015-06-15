@@ -8,6 +8,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 " Testing {{{
+NeoBundle 'mtscout6/vim-cjsx'
+
+NeoBundle 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <M-i> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-k> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-j> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 NeoBundle 'epeli/slimux'
 
