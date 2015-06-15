@@ -13,7 +13,7 @@ if initialize_session "main"; then
 
   #----------------
   new_window "ecam"
-  run_cmd "cd /c/Data/ecam"
+  run_cmd "cd /c/ecam"
   run_cmd "v"
 
   #---------------
