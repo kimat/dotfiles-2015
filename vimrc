@@ -25,7 +25,7 @@ set wildmode=full
 set wildmenu
 
 " ========= SWAP FILES =========
-set dir=~/tmp
+set dir=~/tmp/swaps
 
 " ========= SEARCH OPTIONS =========
 set nohlsearch            " Don't continue to highlight searched phrases.
