@@ -59,6 +59,11 @@ autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 set complete+=kspell
 set foldmethod=marker
 
+autocmd BufNewFile,BufReadPost *.json setl foldmethod=syntax
+" --- coffee --
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+" autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+au BufRead,BufNewFile *.coffee set fdm=marker
 " set ai
 " let g:rubycomplete_buffer_loading = 1
 " let g:rubycomplete_classes_in_global = 1
