@@ -6,6 +6,9 @@ alias wget="wget --continue "
 alias log="less +F +G "
 alias e="fc"
 
+alias ranger='ranger --cmd "set preview_files True"'
+
+
 # sshl() {
 #   egrep '^Host\s(.*)$' ~/.ssh/config | awk '{print $2}' | percol
 # }
