@@ -65,6 +65,7 @@ alias vb='vim ~/.bash_aliases ~/.bashrc /vagrant/writing-using/unix/unix_bash.md
 alias ve='(cd /vagrant/ecam ; vim done.md projects.md ecam.md'
 
 # RUBY ALIASES
+alias "f"="foreman start -f Procfile.dev -e /dev/null"
 alias "rs"="rails server -b0.0.0.0"
 alias "rc"="rails console"
 # alias "foreman"="foreman -e /dev/null "
