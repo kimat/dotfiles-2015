@@ -44,6 +44,7 @@ set backspace=indent,eol,start  " Allow backspace in all circumstance
 " nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
 " =========  FILE TYPE  =========
+" au FocusLost * :wa
 syntax on
 " -- utf 8 --
 set encoding=utf-8
