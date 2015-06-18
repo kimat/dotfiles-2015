@@ -8,6 +8,13 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 " Testing {{{
+nnoremap ga :GitGutterStageHunk<CR>
+nnoremap gn :GitGutterNextHunk<CR>
+
+" [tpope/vim-flagship](https://github.com/tpope/vim-flagship)
+" [nonsequitur/git-gutter-plus](https://github.com/nonsequitur/git-gutter-plus)
+
+" NeoBundle 'dahu/VimFindsMe'
 NeoBundle 'mtscout6/vim-cjsx'
 
 NeoBundle 'christoomey/vim-tmux-navigator'
