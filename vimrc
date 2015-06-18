@@ -56,7 +56,6 @@ au BufRead,BufNewFile *.ahk set filetype=autohotkey
 " autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType gitcommit setlocal spell
 " autocomplet based on spell file
-autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 set complete+=kspell
 set foldmethod=marker
 
@@ -85,3 +84,8 @@ source ~/.vim/perso.vim
 
 " source ~/.vim/test.vim
 set expandtab
+
+" Enter key to toggle fold {{{
+nmap <cr> za
+" }}}
+
