@@ -93,7 +93,8 @@ nmap , <Plug>(show-motion-,)
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'kana/vim-textobj-user'
 " NeoBundle 'nelstrom/vim-textobj-rubyblock'
-NeoBundle 'tpope/vim-commentary'
+" NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'godlygeek/tabular'
 " example usage
