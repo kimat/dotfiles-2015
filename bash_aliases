@@ -93,10 +93,11 @@ alias ga="git add "
 alias gal="git add --all"
 alias gs="watch -t -n 1 --color git status --short"
 alias gm="git commit"
-gc() {
-  git commit -m "$*"
-}
-alias gc=gc
+# gc() {
+#   git commit -m "$*"
+# }
+# alias gc=gc
+alias gc="git commit"
 alias gp="git push"
 alias gl="git --no-pager log --graph --abbrev-commit --decorate --format=format:\
 '%C(bold blue)%h%C(reset)'\
