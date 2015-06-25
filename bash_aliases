@@ -14,9 +14,25 @@ alias ranger='ranger --cmd "set preview_files True"'
 # }
 # alias sshl=sshl
 
+select_a_known_ssh_server() {
+  echo `egrep '^Host\s(.*)$' ~/.ssh/config | awk '{print $2}' | peco`
+}
+
+tmux_rename_window() {
+  B=`tmux display-message -p '#W'`
+  if [ "$B" == "bash" ]; then
+    tmux rename-window "$1-prod"
+  fi
+}
+
 s() {
-  tmux rename-window "$1-prod"
-  ssh "$1"
+  if [ $# -eq 0 ]; then
+    A=$(select_a_known_ssh_server)
+  else
+    A=$1
+  fi
+  tmux_rename_window $A
+  ssh "$A"
 }
 alias s=s
 
