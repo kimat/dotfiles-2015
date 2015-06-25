@@ -132,3 +132,9 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 ### Added by the Heroku Toolbelt
 # export PATH="/usr/local/heroku/bin:$PATH"
+
+# Go
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
+
