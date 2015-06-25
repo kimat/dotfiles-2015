@@ -48,7 +48,9 @@ alias apti="apt-get install -y --no-install-recommends"
 alias aptv="apt-cache madison"
 alias aptI="apt-cache madison"
 alias aptu="apt-get update"
-alias aptU="apt-get --purge autoremove"
+alias aptr="apt-get --purge autoremove"
+alias aptU="apt-get install --only-upgrade"
+
 alias sl="ls"
 alias server="echo python -m SimpleHTTPServer"
 
