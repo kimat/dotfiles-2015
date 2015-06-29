@@ -48,7 +48,8 @@ map <localleader>m vip?`<CR><Esc>jV/`<CR>k:SlimuxREPLSendSelection<CR>
 " }}}
 
 " Leader key {{{
-let mapleader = "\<tab>"
+" let mapleader = "\<tab>"
+let mapleader = ","
 map <Leader>p :CtrlP<CR>
 map <Leader>f :call GoBuffer("next")<CR>
 map <Leader>s :call GoBuffer("previous")<CR>
