@@ -15,6 +15,9 @@ nnoremap gn :GitGutterNextHunk<CR>
 " [nonsequitur/git-gutter-plus](https://github.com/nonsequitur/git-gutter-plus)
 
 " NeoBundle 'dahu/VimFindsMe'
+" NeoBundle 'vim-scripts/AutoComplPop'
+
+NeoBundle 'firegoby/SASS-Snippets'
 NeoBundle 'mtscout6/vim-cjsx'
 
 NeoBundle 'christoomey/vim-tmux-navigator'
@@ -60,6 +63,16 @@ NeoBundle 'airblade/vim-gitgutter'
 " \ }
 
 "}}}
+" }}}
+
+" Autocompletion {{{
+NeoBundle 'msanders/snipmate.vim'
+" imap <C-J> <Plug>snipMateNextOrTrigger
+" smap <C-J> <Plug>snipMateNextOrTrigger
+" ino <tab> <c-r>=TriggerSnippet()<cr>
+" snor <tab> <esc>i<right><c-r>=TriggerSnippet()<cr>
+ino <c-j> <c-r>=TriggerSnippet()<cr>
+snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
 " }}}
 
 " Move in code {{{
