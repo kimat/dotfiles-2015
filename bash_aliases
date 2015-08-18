@@ -83,7 +83,7 @@ alias to=to
 alias ":e"="vim"
 alias rmswp='find -name "*.swp" -delete'
 
-alias vim="nvim"
+#alias vim="nvim"
 vv() {
   \vim -c ":CtrlSpaceLoadWorkspace $1"
 }
