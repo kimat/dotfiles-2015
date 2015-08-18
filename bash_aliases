@@ -1,10 +1,24 @@
-# BOWER
-alias bower="bower --allow-root"
+alias eb="exec bash"
 
-# LINUX
+# Keyboard Related {{{
+alias a='be ;  xmodmap ~/.xmodmap ; (cd ~ ; sh a.sh)'
+alias aa='be ;  xmodmap ~/.xmodmap ; xmodmap ; sh a.sh'
+alias be='setxkbmap be -option ctrl:nocaps'
+alias beep='paplay /usr/share/sounds/gnome/default/alerts/drip.ogg'
+alias eb='exec bash'
+alias xb='xev | grep -A2 --line-buffered '\''^KeyRelease'\'' | sed -n '\''/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'\'''
+alias xd='pkill xcape; xcape -d'
+alias xm='xev | grep button'
+alias xx='xbindkeys -k'
+# }}}
+# BOWER {{{
+alias bower="bower --allow-root"
+# }}}
+# LINUX {{{
 alias wget="wget --continue "
 alias log="less +F +G "
 alias e="fc"
+# }}}
 
 alias ranger='ranger --cmd "set preview_files True"'
 
