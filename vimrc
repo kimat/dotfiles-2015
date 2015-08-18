@@ -1,8 +1,12 @@
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!  filetype off
-"
+" === NeoVim specific ===
+set mouse=""
 
-" =========  NEOBUNDLE  =========
-source ~/.vim/neobundles.vim
+" =========  Vim-Plug  =========
+call plug#begin('~/.vim/plugged')
+source ~/.vim/plugs.vim
+call plug#end()
+" source ~/.vim/neobundles.vim
 filetype plugin indent on
 set hidden
 
@@ -49,7 +53,23 @@ syntax on
 " -- utf 8 --
 set encoding=utf-8
 set fileencodings=utf-8
+
+" -- JS --
+au BufRead,BufNewFile *.js set foldmethod=indent
+
+" -- Markdown --
 au BufRead,BufNewFile *.md set filetype=markdown
+function MarkdownLevel()
+  let h = matchstr(getline(v:lnum), '^#\+')
+  if empty(h)
+    return "="
+  else
+    return ">" . len(h)
+  endif
+endfunction
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+au BufEnter *.md setlocal foldmethod=expr
+
 autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:> com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 au BufRead,BufNewFile *.ahk e ++ff=dos
 au BufRead,BufNewFile *.ahk set filetype=autohotkey
