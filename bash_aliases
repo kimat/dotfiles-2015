@@ -1,5 +1,9 @@
+# {{{ mixed
+alias ack="ack-grep --ignore-dir log "
+alias docker="sudo docker"
 alias eb="exec bash"
-
+alias otp="ruby ~/a.rb"
+# }}}
 # Keyboard Related {{{
 alias a='be ;  xmodmap ~/.xmodmap ; (cd ~ ; sh a.sh)'
 alias aa='be ;  xmodmap ~/.xmodmap ; xmodmap ; sh a.sh'
