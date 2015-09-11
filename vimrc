@@ -2,6 +2,10 @@ set nocompatible          " get rid of Vi compatibility mode. SET FIRST!  filety
 " === NeoVim specific ===
 set mouse=""
 
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
 " =========  Vim-Plug  =========
 call plug#begin('~/.vim/plugged')
 source ~/.vim/plugs.vim
@@ -23,6 +27,7 @@ endif
 
 " ==========  TABS MANAGEMENT =========
 source ~/.vim/tabs.vim
+"TODO :set <PageUp>=:bn<cr>
 
 " ========= STATUS BAR =========
 set wildmode=full
@@ -49,6 +54,9 @@ set backspace=indent,eol,start  " Allow backspace in all circumstance
 
 " =========  FILE TYPE  =========
 " au FocusLost * :wa
+set ttyfast
+set lazyredraw
+set re=1
 syntax on
 " -- utf 8 --
 set encoding=utf-8
