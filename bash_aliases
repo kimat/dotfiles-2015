@@ -131,6 +131,7 @@ alias gm="git commit"
 # }
 # alias gc=gc
 alias gc="git commit"
+alias gf="git pull --rebase"
 alias gp="git push"
 alias gl="git --no-pager log --graph --abbrev-commit --decorate --format=format:\
 '%C(bold blue)%h%C(reset)'\
