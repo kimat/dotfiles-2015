@@ -1,0 +1,102 @@
+! command to reload and debug this: {{{
+! alias a="setxkbmap be ; xmodmap ~/.xmodmap ; xmodmap"
+!$(setxkbmap -option ctrl:nocaps)
+! }}}
+
+! syntax intro {{{
+!}}}
+
+! Capslock as right ctrl
+! done with xkbmap option now
+!remove lock = Caps_Lock
+!keycode 66 = Control_R
+!add Control = Control_R
+
+
+! Easier enter key
+! on ugrave
+keycode 48 = Return percent Next NoSymbol
+
+
+! Space as modifier
+!clear mod2
+!keycode 65 = Hyper_L
+!remove mod4 = Hyper_L
+!add mod2 = Hyper_L
+!keycode any = space
+
+! space as a mode_switch
+keycode 65 = Mode_switch
+keycode any = space
+
+! Test with right ctrl
+!remove control = Control_R
+!clear mod2
+!add mod2 = Control_R
+
+! Move exclamation point
+! on eaccute
+keycode any = eacute
+
+
+! Easier curly braces
+! on ccedilla & agrave
+keycode 18 = braceleft 9 NoSymbol NoSymbol
+keycode 19 = braceright 0
+keycode any = ccedilla
+keycode any = agrave
+
+
+! Easier parentheses
+! on section
+keycode 15 = parenright 6
+keycode any = section
+
+! Easier square brackets
+! on egrave and exclam
+keycode 16 = bracketleft 7
+keycode 17 = bracketright 8
+keycode any = egrave
+
+
+keysym u = u U NoSymbol NoSymbol 7
+keysym i = i I Up NoSymbol 8
+keysym o = o O F3 NoSymbol 9
+keysym j = j J Left NoSymbol 4
+keysym k = k K Down NoSymbol 5
+keysym l = l L Right NoSymbol 6
+keycode 58 = comma question NoSymbol NoSymbol 1
+keycode 59 = semicolon period NoSymbol NoSymbol 2
+keycode 60 = colon slash NoSymbol NoSymbol 3
+keysym h = h H Home
+keysym m = m M End
+keysym n = n N BackSpace NoSymbol 0
+keysym p = p P Delete
+keysym t = t T asciitilde
+keycode 10 = ampersand 1 plus minus bar egrave
+keycode 11 = exclam 2 equal NoSymbol at
+keycode 61 = equal plus NoSymbol NoSymbol asciitilde
+keycode 51 = grave mu NoSymbol NoSymbol sterling
+keycode 39 = s S Prior
+keycode 41 = f F Next
+
+keycode 34 = asciicircum bracketleft Prior NoSymbol bracketleft
+
+! Easier right shift
+! on equal
+!keycode 61 = Shift_R plus
+!add Shift = Shift_R
+!keycode any = equal
+
+!keysym Button3 = equal
+
+!   Swap Caps_Lock and Control_L
+! remove Lock = Caps_Lock
+! remove Control = Control_L
+! keysym Control_L = Caps_Lock
+! keysym Caps_Lock = Control_L
+! add Lock = Caps_Lock
+! add Control = Control_L
+
+!   Space as another modifier
+
