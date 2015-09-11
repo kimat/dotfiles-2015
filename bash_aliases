@@ -36,12 +36,14 @@ select_a_known_ssh_server() {
   echo `egrep '^Host\s(.*)$' ~/.ssh/config | awk '{print $2}' | peco`
 }
 
+# Tmux {{{
 tmux_rename_window() {
   B=`tmux display-message -p '#W'`
   if [ "$B" == "bash" ]; then
     tmux rename-window "$1-prod"
   fi
 }
+# }}}
 
 s() {
   if [ $# -eq 0 ]; then
@@ -61,13 +63,13 @@ alias s=s
 
 # UBUNTU
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal ls
-alias apts="apt-cache search"
-alias apti="apt-get install -y --no-install-recommends"
-alias aptv="apt-cache madison"
-alias aptI="apt-cache madison"
-alias aptu="apt-get update"
-alias aptr="apt-get --purge autoremove"
-alias aptU="apt-get install --only-upgrade"
+alias apts="sudo apt-cache search"
+alias apti="sudo apt-get install -y"  #--no-install-recommends"
+alias aptv="sudo apt-cache madison"
+alias aptI="sudo apt-cache madison"
+alias aptu="sudo apt-get update"
+alias aptr="sudo apt-get --purge autoremove"
+alias aptU="sudo apt-get install --only-upgrade"
 
 alias sl="ls"
 alias server="echo python -m SimpleHTTPServer"
