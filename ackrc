@@ -1,0 +1,6 @@
+--ignore-dir=log
+--ignore-dir=public
+--ignore-dir=features/vcr_cassettes
+--ignore-dir=coverage
+--ignore-dir=specs/fixtures
+--ruby
